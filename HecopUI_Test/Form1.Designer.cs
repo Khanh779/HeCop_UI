@@ -431,7 +431,7 @@ namespace HecopUI_Test
             this.hTitleSubButton7.Radius = 5F;
             this.hTitleSubButton7.RippleColor = System.Drawing.Color.Black;
             this.hTitleSubButton7.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.hTitleSubButton7.ShadowPadding = new System.Windows.Forms.Padding(0);
+            this.hTitleSubButton7.ShadowPadding = new System.Windows.Forms.Padding(3, 1, 3, 4);
             this.hTitleSubButton7.ShadowRadius = 5;
             this.hTitleSubButton7.Size = new System.Drawing.Size(115, 117);
             this.hTitleSubButton7.TabIndex = 26;
@@ -472,12 +472,12 @@ namespace HecopUI_Test
             this.hTitleSubButton8.ImageOffsetY = 15;
             this.hTitleSubButton8.ImageSize = new System.Drawing.Size(30, 30);
             this.hTitleSubButton8.Interval = 200;
-            this.hTitleSubButton8.Location = new System.Drawing.Point(625, 182);
+            this.hTitleSubButton8.Location = new System.Drawing.Point(625, 176);
             this.hTitleSubButton8.Name = "hTitleSubButton8";
             this.hTitleSubButton8.Radius = 5F;
             this.hTitleSubButton8.RippleColor = System.Drawing.Color.Black;
             this.hTitleSubButton8.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.hTitleSubButton8.ShadowPadding = new System.Windows.Forms.Padding(0);
+            this.hTitleSubButton8.ShadowPadding = new System.Windows.Forms.Padding(3, 1, 3, 4);
             this.hTitleSubButton8.ShadowRadius = 5;
             this.hTitleSubButton8.Size = new System.Drawing.Size(115, 117);
             this.hTitleSubButton8.TabIndex = 25;
@@ -523,7 +523,7 @@ namespace HecopUI_Test
             this.hTitleSubButton9.Radius = 5F;
             this.hTitleSubButton9.RippleColor = System.Drawing.Color.Black;
             this.hTitleSubButton9.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.hTitleSubButton9.ShadowPadding = new System.Windows.Forms.Padding(0);
+            this.hTitleSubButton9.ShadowPadding = new System.Windows.Forms.Padding(3, 1, 3, 4);
             this.hTitleSubButton9.ShadowRadius = 5;
             this.hTitleSubButton9.Size = new System.Drawing.Size(115, 117);
             this.hTitleSubButton9.TabIndex = 24;
@@ -610,7 +610,7 @@ namespace HecopUI_Test
             this.hTitleSubButton5.ImageOffsetY = 15;
             this.hTitleSubButton5.ImageSize = new System.Drawing.Size(30, 30);
             this.hTitleSubButton5.Interval = 200;
-            this.hTitleSubButton5.Location = new System.Drawing.Point(498, 182);
+            this.hTitleSubButton5.Location = new System.Drawing.Point(498, 176);
             this.hTitleSubButton5.Name = "hTitleSubButton5";
             this.hTitleSubButton5.Radius = 5F;
             this.hTitleSubButton5.RippleColor = System.Drawing.Color.Black;
@@ -748,7 +748,7 @@ namespace HecopUI_Test
             this.hTitleSubButton2.ImageOffsetY = 15;
             this.hTitleSubButton2.ImageSize = new System.Drawing.Size(30, 30);
             this.hTitleSubButton2.Interval = 200;
-            this.hTitleSubButton2.Location = new System.Drawing.Point(370, 182);
+            this.hTitleSubButton2.Location = new System.Drawing.Point(370, 176);
             this.hTitleSubButton2.Name = "hTitleSubButton2";
             this.hTitleSubButton2.Radius = 5F;
             this.hTitleSubButton2.RippleColor = System.Drawing.Color.Black;

@@ -36,9 +36,9 @@ namespace HecopUI_Test
 
         }
 
-        private void hButton1_Click(object sender, EventArgs e)
+        private void hCheckBox1_CheckedChanged(object sender, EventArgs e)
         {
-           
+            hCheckBox1.Text = hCheckBox1.Name+" (Checked: "+ hCheckBox1.Checked+")";
         }
     }
 }

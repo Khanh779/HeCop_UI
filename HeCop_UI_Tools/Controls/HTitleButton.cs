@@ -56,74 +56,110 @@ namespace HecopUI_Winforms.Controls
             }
         }
 
-        protected override void OnCreateControl()
-        {
-            Invalidate();
-            base.OnCreateControl();
-        }
-
+       
 
 
         public HTitleButton()
         {
             SetStyle(GetAppResources.SetControlStyles(), true);
             DoubleBuffered = true;
-            _animationManager = new AnimationManager(false)
+            _animationManager = new AnimationManager(true)
             {
                 Increment = 0.03,
                 AnimationType = Animations.AnimationType.EaseOut
             };
-            _animationManager.OnAnimationProgress += sender =>
-            {
-                Invalidate();
-            };
+
+            object[] b = new object[] { new Point(0, 0) };
+            _animationManager.StartNewAnimation(AnimationDirection.Out);
+            _animationManager.SetData(b);
+
+            _animationManager.OnAnimationProgress += _animationManager_OnAnimationProgress;
+            _animationManager.OnAnimationFinished += _animationManager_OnAnimationFinished;
             Size = new Size(111, 123);
 
-            MouseDown += (sender, e) =>
-            {
-                butDo = true;
-                if (ButtonDownColor1 == Color.Empty)
-                {
-                    ButtonDownColor1 = Color.FromArgb(ButtonColor1.R - 5, ButtonColor1.G - 5, ButtonColor1.B - 5);
-                }
-                _animationManager.StartNewAnimation(AnimationDirection.In, e.Location);
-                Invalidate();
-            };
-            MouseUp += (sender, e) =>
-            {
-                butDo = false;
-                Invalidate();
-            };
-            MouseEnter += (sender, e) =>
-            {
-                butHo = true;
-                if (!DesignMode && AnimationMode == Enums.AnimationMode.ColorTransition)
-                {
-                    _animationManager.StartNewAnimation(AnimationDirection.In);
-                }
-
-                Invalidate();
-            };
-            MouseLeave += (sender, e) =>
-            {
-                butHo = false;
-                if (!DesignMode && AnimationMode == Enums.AnimationMode.ColorTransition)
-                {
-                    _animationManager.StartNewAnimation(AnimationDirection.Out);
-                }
-
-                Invalidate();
-            };
-
-            BackColor = Color.Transparent;
             DoubleBuffered = true;
-
             ForeColor = Color.White;
 
         }
 
+        private void _animationManager_OnAnimationFinished(object sender)
+        {
+            _animationManager.Dispose();
+        }
 
-        public Enums.AnimationMode AnimationMode { get; set; } = Enums.AnimationMode.None;
+        private void _animationManager_OnAnimationProgress(object sender)
+        {
+            Invalidate();
+        }
+
+        protected override void OnMouseUp(MouseEventArgs e)
+        {
+            butDo = false;
+            Invalidate();
+            base.OnMouseUp(e);
+        }
+
+        protected override void OnMouseDown(MouseEventArgs e)
+        {
+            butDo = true;
+            if (ButtonDownColor1 == Color.Empty)
+            {
+                ButtonDownColor1 = Color.FromArgb(ButtonColor1.R - 5, ButtonColor1.G - 5, ButtonColor1.B - 5);
+            }
+            if (AnimationMode == Enums.AnimationMode.Ripple)
+                _animationManager.StartNewAnimation(AnimationDirection.In, e.Location);
+            Invalidate();
+            base.OnMouseDown(e);
+        }
+
+        protected override void OnMouseEnter(EventArgs e)
+        {
+            butHo = true;
+            if (AnimationMode == Enums.AnimationMode.ColorTransition)
+            {
+                _animationManager.StartNewAnimation(AnimationDirection.In);
+            }
+            Invalidate();
+            base.OnMouseEnter(e);
+        }
+
+        protected override void OnMouseLeave(EventArgs e)
+        {
+            butHo = false;
+            if (AnimationMode == Enums.AnimationMode.ColorTransition)
+            {
+                _animationManager.StartNewAnimation(AnimationDirection.Out);
+            }
+
+            Invalidate();
+            base.OnMouseLeave(e);
+        }
+
+
+        private Enums.AnimationMode animationMode =Enums.AnimationMode.None;
+        public Enums.AnimationMode AnimationMode
+        {
+            get { return animationMode; }
+            set
+            {
+                animationMode = value;
+                switch (animationMode)
+                {
+                    case Enums.AnimationMode.None:
+                        _animationManager.Singular = true;
+                        break;
+                    case Enums.AnimationMode.Ripple:
+                        _animationManager.Singular = false;
+                        _animationManager.Increment = 0.03;
+                        break;
+                    case Enums.AnimationMode.ColorTransition:
+                        _animationManager.Singular = true;
+                        _animationManager.Increment = 0.05;
+                        break;
+                }
+                Invalidate();
+            }
+        }
 
 
         bool butHo;
@@ -338,21 +374,19 @@ namespace HecopUI_Winforms.Controls
         protected override void OnPaint(PaintEventArgs e)
         {
             float b = 0f;
-
-            using (Bitmap bitmap = new Bitmap(Width, Height))
-            using (Graphics g = Graphics.FromImage(bitmap))
-            using (LinearGradientBrush LB1 = (AnimationMode == Enums.AnimationMode.Ripple ?
-                new LinearGradientBrush(ClientRectangle, butHo ? ButtonHoverColor1 : ButtonColor1, butHo ? ButtonHoverColor2 : ButtonColor2, LB) :
-                AnimationMode == Enums.AnimationMode.ColorTransition ?
-                new LinearGradientBrush(ClientRectangle, butDo ? ButtonDownColor1 : butHo ? DrawHelper.BlendColor(ButtonColor1, ButtonHoverColor1, _animationManager.GetProgress()) : DrawHelper.BlendColor(ButtonColor1, ButtonHoverColor1, _animationManager.GetProgress()),
-                butDo ? ButtonDownColor2 : butHo ? DrawHelper.BlendColor(ButtonColor2, ButtonHoverColor2, _animationManager.GetProgress()) : DrawHelper.BlendColor(ButtonColor2, ButtonHoverColor2, _animationManager.GetProgress()), LB) :
-                new LinearGradientBrush(ClientRectangle, butDo ? ButtonDownColor1 : butHo ? ButtonHoverColor1 : ButtonColor1, butDo ? ButtonDownColor2 : butHo ? ButtonHoverColor2 : ButtonColor2, LB)))
+            using (LinearGradientBrush LB1 =
+               (AnimationMode == Enums.AnimationMode.ColorTransition) ? new LinearGradientBrush(ClientRectangle, butDo ? ButtonDownColor1 : butHo ? DrawHelper.BlendColor(ButtonColor1, ButtonHoverColor1, 255 * _animationManager.GetProgress()) : DrawHelper.BlendColor(ButtonColor1, ButtonHoverColor1, 255 * _animationManager.GetProgress()),
+                butDo ? ButtonDownColor2 : butHo ? DrawHelper.BlendColor(ButtonColor2, ButtonHoverColor2, 255 * _animationManager.GetProgress()) : DrawHelper.BlendColor(ButtonColor2, ButtonHoverColor2, 255 * _animationManager.GetProgress()), LB) :
+               (AnimationMode == Enums.AnimationMode.Ripple) ? new LinearGradientBrush(ClientRectangle, butHo ? ButtonHoverColor1 : ButtonColor1, butHo ? ButtonHoverColor2 : ButtonColor2, LB) :
+                new LinearGradientBrush(ClientRectangle, butDo ? ButtonDownColor1 : butHo ? ButtonHoverColor1 : ButtonColor1, butDo ? ButtonDownColor2 : butHo ? ButtonHoverColor2 : ButtonColor2, LB))
 
             using (GraphicsPath GP = DrawHelper.GetRoundPath(new RectangleF(b + (shadowPadding.Left), b + (shadowPadding.Top), (Width - shadowPadding.Left) - (shadowPadding.Right), (Height - shadowPadding.Top) - (shadowPadding.Bottom)), Radius, BorderThickness))
-            
+
             using (GraphicsPath SGP = DrawHelper.GetRoundPath(new RectangleF(b, b, Width, Height), Radius))
-            using (GraphicsPath FillPa = DrawHelper.GetRoundPath(new RectangleF(b + (shadowPadding.Left), b + (shadowPadding.Top), (Width - shadowPadding.Left) - (shadowPadding.Right), (Height - shadowPadding.Top) - (shadowPadding.Bottom)), Radius))
+            using (Bitmap bitmap = HecopUI_Winforms.Ultils.DropShadow.Create(SGP, ShadowColor, shadowRad))
+            using (Graphics g = Graphics.FromImage(bitmap))
             {
+                bitmap.MakeTransparent();
                 if (ClipRegion == true && DesignMode == false)
                 {
                     GetAppResources.MakeTransparent(this, g);
@@ -371,15 +405,7 @@ namespace HecopUI_Winforms.Controls
                 pen = new Pen(new SolidBrush(butDo ? BorderDownColor : butHo ? BorderHoverColor : BDC), BT);
                 pen.Alignment = PenAlignment.Inset;
 
-                if (ShadowPadding.All != 0)
-                    using (Bitmap Shado = HecopUI_Winforms.Ultils.DropShadow.Create(SGP, ShadowColor, shadowRad))
-                    {
-                        Shado.MakeTransparent();
-                        if (ShadowColor.A != 0 || ShadowRadius != 0)
-                            g.DrawImage(Shado, 0, 0, Width - 1, Height - 1);
-                    }
-
-                g.FillPath(LB1, FillPa);
+                g.FillPath(LB1, GP);
 
                 if (BT != 0) g.DrawPath(pen, GP);
 
@@ -393,29 +419,20 @@ namespace HecopUI_Winforms.Controls
                 if (Text != String.Empty)
                     g.DrawString(Text, Font, new SolidBrush(ForeColor), new RectangleF(2 + textPadding.Left, textPadding.Top + (IS + ISi.Height + TOY), Width - 2 - textPadding.Right - textPadding.Left, (this.Height) - (IS + ISi.Height + TOY) - textPadding.Bottom - textPadding.Top), SF);
 
-                switch (AnimationMode)
+                if (_animationManager.IsAnimating() && animationMode== Enums.AnimationMode.Ripple)
                 {
-                    case Enums.AnimationMode.Ripple:
-                        if (_animationManager.IsAnimating())
+                    for (var i = 0; i < _animationManager.GetAnimationCount(); i++)
+                    {
+                        var animationValue = _animationManager.GetProgress(i);
+                        var animationSource = _animationManager.GetSource(i);
+                        using (Brush rippleBrush = new SolidBrush(Color.FromArgb((int)(101 - (animationValue * 100)), RippleColor)))
                         {
-
-                            for (var i = 0; i < _animationManager.GetAnimationCount(); i++)
-                            {
-                                var animationValue = _animationManager.GetProgress(i);
-                                var animationSource = _animationManager.GetSource(i);
-
-                                using (Brush rippleBrush = new SolidBrush(Color.FromArgb((int)(101 - (animationValue * 100)), RippleColor)))
-                                {
-                                    var rippleSize = (int)(animationValue * (Math.Max(Width, Height)) * 3);
-                                    g.FillEllipse(rippleBrush, new Rectangle(animationSource.X - rippleSize / 2, animationSource.Y - rippleSize / 2, rippleSize, rippleSize));
-                                }
-                            }
+                            var rippleSize = (int)(animationValue * (Math.Max(Width, Height)) * 3);
+                            g.FillEllipse(rippleBrush, new Rectangle(animationSource.X - rippleSize / 2, animationSource.Y - rippleSize / 2, rippleSize, rippleSize));
                         }
-                        break;
-
+                    }
                 }
-
-                if (foc)
+                if (Focused)
                 {
                     using (GraphicsPath gpf = DrawHelper.GetRoundPath(new RectangleF(b + (shadowPadding.Left), b + (shadowPadding.Top),
                     (Width - shadowPadding.Left) - (shadowPadding.Right),
@@ -423,27 +440,24 @@ namespace HecopUI_Winforms.Controls
                         g.DrawPath(new Pen(new SolidBrush(fbc), 1) { Alignment = PenAlignment.Inset, DashStyle = dashStyle }, gpf);
                 }
                 Brush br = new TextureBrush(bitmap);
-                e.Graphics.FillPath(br, FillPa);
+                e.Graphics.FillPath(br, SGP);
             }
-
+          
             base.OnPaint(e);
         }
 
-
-        bool foc = false;
-
-        protected override void OnEnter(EventArgs e)
+        protected override void OnGotFocus(EventArgs e)
         {
-            foc = true;
             Invalidate();
-            base.OnEnter(e);
+            base.OnGotFocus(e);
         }
 
-        protected override void OnLeave(EventArgs e)
+        protected override void OnLostFocus(EventArgs e)
         {
-            foc = false; Invalidate();
-            base.OnLeave(e);
+            Invalidate();
+            base.OnLostFocus(e);
         }
+
 
         Color fbc = Color.White;
         public Color FocusBorderColor

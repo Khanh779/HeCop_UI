@@ -23,7 +23,7 @@
         /// <summary>
         /// Gets or sets the SecondaryIncrement
         /// </summary>
-        public double SecondaryIncrement { get; set; } = 0.03;
+        public double SecondaryIncrement { get; set; } 
 
         /// <summary>
         /// Gets or sets the AnimationType
@@ -33,7 +33,7 @@
         /// <summary>
         /// Gets or sets a value indicating whether Singular
         /// </summary>
-        public bool Singular { get; set; } = false;
+        public bool Singular { get; set; }
 
         /// <summary>
         /// The AnimationFinished
@@ -109,12 +109,12 @@
             InterruptAnimation = true;
             Singular = singular;
 
-            //if (Singular)
-            //{
-            //    _animationProgresses.Add(0);
-            //    _animationSources.Add(new Point(0, 0));
-            //    _animationDirections.Add(AnimationDirection.In);
-            //}
+            if (Singular)
+            {
+                _animationProgresses.Add(0);
+                _animationSources.Add(new Point(0, 0));
+                _animationDirections.Add(AnimationDirection.In);
+            }
 
             _animationTimer.Tick += AnimationTimerOnTick;
         }

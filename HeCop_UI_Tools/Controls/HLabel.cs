@@ -52,11 +52,25 @@ namespace HecopUI_Winforms.Controls
             SF.Trimming = ST;
             g.TextRenderingHint = textRen;
             GetAppResources.GetStringAlign(SF, CA);
-            if((_symbol != String.Empty || _symbol != null | _symbol != ""))
+            if((_symbol != String.Empty || _symbol != null | _symbol != "") && symbolVisible)
                 g.DrawString(_symbol, _symbolFont, new SolidBrush(_symbolColor), new RectangleF(0 + Padding.Left, 0 + Padding.Top, Width - Padding.Right, Height - Padding.Bottom));
             g.DrawString(Text, Font, new SolidBrush(ForeColor), new RectangleF(((_symbol!=String.Empty|| _symbol!=null | _symbol!="")? g.MeasureString(_symbol, _symbolFont).Width+2 :  0) + Padding.Left, 
                 0 + Padding.Top, Width - Padding.Right - ((_symbol != String.Empty || _symbol != null | _symbol != "") ? g.MeasureString(_symbol, _symbolFont).Width + 2 : 0), Height - Padding.Bottom), SF);
             base.OnPaint(e);
+        }
+
+        bool symbolVisible = true;
+
+        /// <summary>
+        /// Gets or sets symbol visibility
+        /// </summary>
+        public bool SymbolVisible
+        {
+            get { return symbolVisible; }
+            set
+            {
+                symbolVisible = value; Invalidate();
+            }
         }
 
         Color _symbolColor = Color.Gray;

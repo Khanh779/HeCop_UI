@@ -6,6 +6,7 @@ using System.Windows.Forms;
 
 namespace HecopUI_Winforms.Controls
 {
+    [DefaultEvent("CheckedChanged")]
     public partial class HCheckBox : Control
     {
         #region Variables
@@ -74,16 +75,7 @@ namespace HecopUI_Winforms.Controls
 
         #endregion
 
-        #region Events
-
-        protected override void OnHandleCreated(EventArgs e)
-        {
-            base.OnHandleCreated(e);
-        }
-
-
-
-        #endregion
+      
         public HCheckBox()
         {
             SetStyle(HecopUI_Winforms.GetAppResources.SetControlStyles(), true);
@@ -110,12 +102,6 @@ namespace HecopUI_Winforms.Controls
             base.OnMouseLeave(e);
         }
 
-
-        protected override void OnCreateControl()
-        {
-
-            base.OnCreateControl();
-        }
 
         int rippleCenter = 30;
         int rippleWidth = 0;

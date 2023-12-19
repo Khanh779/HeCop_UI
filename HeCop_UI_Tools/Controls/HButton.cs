@@ -5,8 +5,15 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using System.Windows.Media;
+using Brush = System.Drawing.Brush;
+using Color = System.Drawing.Color;
+using DashStyle = System.Drawing.Drawing2D.DashStyle;
+using LinearGradientBrush = System.Drawing.Drawing2D.LinearGradientBrush;
+using Pen = System.Drawing.Pen;
 
 namespace HecopUI_Winforms.Controls
 {
@@ -221,49 +228,35 @@ namespace HecopUI_Winforms.Controls
             }
         }
 
+        GraphicsPath CircularGraphicsPath(RectangleF rect)
+        {
+            GraphicsPath graphicsPath = new GraphicsPath();
+            graphicsPath.AddEllipse(rect);
+            return graphicsPath;
+        }
+
         protected override void OnPaint(PaintEventArgs e)
         {
-            float b = 0.5f;
+            float b = 0f;
             base.OnPaint(e);
+            RectangleF rec = new RectangleF(3f + shadowPadding.Left, 3f + shadowPadding.Top, Width - 4 - shadowPadding.Right - shadowPadding.Left, Height - 4 - shadowPadding.Bottom - shadowPadding.Top);
+            RectangleF RF = new RectangleF(shadowPadding.Left + 2 + textPadding.Left, shadowPadding.Top + 2 + textPadding.Top, Width - 2 - textPadding.Right - textPadding.Left - shadowPadding.Left - shadowPadding.Right, Height - 2 - textPadding.Bottom - textPadding.Top - shadowPadding.Top - shadowPadding.Bottom);
             GetAppResources.MakeTransparent(this, e.Graphics);
-            using (GraphicsPath SGP = (ST == ShapeType.Rectangle) ? DrawHelper.GetRoundPath(new RectangleF(b, b, Width - b, Height - b), Rad - 0.5f, BorderThickness - 1) : new GraphicsPath())
-            using (GraphicsPath FillPa = ST == ShapeType.Rectangle ? DrawHelper.GetRoundPath(new RectangleF(b + (shadowPadding.Left), b + (shadowPadding.Top), (Width - b - shadowPadding.Left) - (shadowPadding.Right), (Height - b - shadowPadding.Top) - (shadowPadding.Bottom)), Rad, BorderThickness) : new GraphicsPath())
-            using (LinearGradientBrush GHB = new LinearGradientBrush(ClientRectangle, ButDo ? ButtonDownColor1 : ButHo ? ButtonHoverColor1 : ButtonColor1, ButDo ? ButtonDownColor2 : ButHo ? ButtonHoverColor2 : ButtonColor2, LB))
-            using (LinearGradientBrush AHB = AnimationMode == AnimationMode.ColorTransition ?
-             new LinearGradientBrush(ClientRectangle, ButDo ? ButtonDownColor1 : ButHo ? DrawHelper.BlendColor(ButtonColor1, ButtonHoverColor1, 255 * _animationManager.GetProgress()) :
-                 DrawHelper.BlendColor(ButtonColor1, ButtonHoverColor1, 255 * _animationManager.GetProgress()), ButDo ? ButtonDownColor2 :
-                 ButHo ? DrawHelper.BlendColor(ButtonColor2, ButtonHoverColor2, 255 * _animationManager.GetProgress()) :
-                 DrawHelper.BlendColor(ButtonColor2, ButtonHoverColor2, 255 * _animationManager.GetProgress()), LB) :
-             new LinearGradientBrush(ClientRectangle, ButHo ? ButtonHoverColor1 : ButtonColor1, ButHo ? ButtonHoverColor2 : ButtonColor2, LB))
-
-            using (Pen pen = new Pen(ButDo ? BorderDownColor : ButHo ? BorderHoverColor : BC, BT) { Alignment = PenAlignment.Inset })
+            using (GraphicsPath SGP = (ST == ShapeType.Rectangle) ? DrawHelper.GetRoundPath(new RectangleF(b, b, Width - b, Height - b), Rad - 0.5f ) : CircularGraphicsPath(new RectangleF(b, b, Width - b, Height - b)))
+            using (GraphicsPath GP = DrawHelper.GetRoundPath(new RectangleF(b + (shadowPadding.Left), b + (shadowPadding.Top), (Width - shadowPadding.Left) - (shadowPadding.Right), (Height - shadowPadding.Top) - (shadowPadding.Bottom)), Radius, BorderThickness))
+            using (LinearGradientBrush AHB = 
+                (AnimationMode == AnimationMode.ColorTransition) ? new LinearGradientBrush(ClientRectangle, ButDo ? ButtonDownColor1 : ButHo ? DrawHelper.BlendColor(ButtonColor1, ButtonHoverColor1, 255 * _animationManager.GetProgress()) : DrawHelper.BlendColor(ButtonColor1, ButtonHoverColor1, 255 * _animationManager.GetProgress()), 
+                 ButDo ? ButtonDownColor2 : ButHo ? DrawHelper.BlendColor(ButtonColor2, ButtonHoverColor2, 255 * _animationManager.GetProgress()) : DrawHelper.BlendColor(ButtonColor2, ButtonHoverColor2, 255 * _animationManager.GetProgress()), LB) :
+                (AnimationMode == AnimationMode.Ripple) ? new LinearGradientBrush(ClientRectangle, ButHo ? ButtonHoverColor1 : ButtonColor1, ButHo ? ButtonHoverColor2 : ButtonColor2, LB) :
+                 new LinearGradientBrush(ClientRectangle, ButDo ? ButtonDownColor1 : ButHo ? ButtonHoverColor1 : ButtonColor1, ButDo ? ButtonDownColor2 : ButHo ? ButtonHoverColor2 : ButtonColor2, LB))
+            
             using (SolidBrush sbText = new SolidBrush(ButDo ? TextDownColor : ButHo ? TextHoverColor : TextNormalColor))
             using (StringFormat SF = new StringFormat())
+            using (Bitmap bitmap = HecopUI_Winforms.Ultils.DropShadow.Create(SGP, ShadowColor, shadowRad))
             {
-                RectangleF rec = new RectangleF(3f + shadowPadding.Left, 3f + shadowPadding.Top, Width - 4 - shadowPadding.Right - shadowPadding.Left, Height - 4 - shadowPadding.Bottom - shadowPadding.Top);
-                RectangleF RF = new RectangleF(shadowPadding.Left + 2 + textPadding.Left, shadowPadding.Top + 2 + textPadding.Top, Width - 2 - textPadding.Right - textPadding.Left - shadowPadding.Left - shadowPadding.Right, Height - 2 - textPadding.Bottom - textPadding.Top - shadowPadding.Top - shadowPadding.Bottom);
-                GetAppResources.GetStringAlign(SF, CA);
-                SF.Trimming = STA;
-                if (ST == ShapeType.Circular)
-                {
-                    SGP.AddEllipse(new RectangleF(b, b, Width-b, Height-b));
-                    FillPa.AddEllipse(rec);
-                }
-               
-                if (ClipRegion == true && DesignMode == false)
-                {
-                    if (ST == ShapeType.Rectangle) Region = new Region(DrawHelper.GetRoundPath(new RectangleF(0, 0, Width, Height), Rad - 2.5f));
-                    if (ST == ShapeType.Circular)
-                    {
-                        GraphicsPath a = new GraphicsPath(); a.AddEllipse(0, 0, Width, Height);
-                        Region = new Region(a);
-                    }
-                }
-
-                Bitmap bitmap = HecopUI_Winforms.Ultils.DropShadow.Create(SGP, ShadowColor, shadowRad);
                 bitmap.MakeTransparent();
                 Graphics g = Graphics.FromImage(bitmap);
-
+                g.TextRenderingHint = textRenderHint;
                 if (ST == ShapeType.Circular)
                 {
                     GetAppResources.GetControlGraphicsEffect(g); GetAppResources.GetControlGraphicsEffect(e.Graphics);
@@ -281,9 +274,20 @@ namespace HecopUI_Winforms.Controls
                         g.InterpolationMode = InterpolationMode.HighQualityBicubic;
                     }
                 }
-                g.TextRenderingHint = textRenderHint;
-
-                g.FillPath(AnimationMode != AnimationMode.None ? AHB : GHB, FillPa);
+                if (Rad == 0) g.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                GetAppResources.GetStringAlign(SF, CA);
+                SF.Trimming = STA;    
+                if (ClipRegion == true && DesignMode == false)
+                {
+                    //if (ST == ShapeType.Rectangle) Region = new Region(DrawHelper.GetRoundPath(new RectangleF(0, 0, Width, Height), Rad - 2.5f));
+                    if (ST == ShapeType.Circular)
+                    {
+                        GraphicsPath a = new GraphicsPath(); a.AddEllipse(0, 0, Width, Height);
+                        Region = new Region(a);
+                    }
+                }
+               
+                g.FillPath(AHB, GP);
 
                 if (image != null)
                 {
@@ -298,7 +302,7 @@ namespace HecopUI_Winforms.Controls
                         catch { }
                     }
 
-                    RectangleF drawRectangle= RectangleF.Empty;
+                    RectangleF drawRectangle = RectangleF.Empty;
 
                     switch (textImageRelation)
                     {
@@ -336,15 +340,14 @@ namespace HecopUI_Winforms.Controls
 
                     // Chỉ vẽ hình ảnh nếu hình chữ nhật vẽ đã được xác định
                     if (drawRectangle != RectangleF.Empty)
-                    {
                         g.DrawImage(image, drawRectangle, new RectangleF(0, 0, Image.Width, Image.Height), GraphicsUnit.Pixel);
-                    }
                 }
 
                 g.DrawString(Text, Font, sbText, RF, SF);
-                if (BT != 0)
-                    g.DrawPath(pen, FillPa);
-
+                Pen pen = new Pen(new SolidBrush(ButDo ? BorderDownColor : ButHo ? BorderHoverColor : BorderColor), BT);
+                pen.Alignment = PenAlignment.Inset;
+                if (Rad == 0) g.SmoothingMode = SmoothingMode.Default;
+                if (BT != 0) g.DrawPath(pen, GP);
                 g.SmoothingMode = SmoothingMode.HighQuality;
                 if (AnimationMode == AnimationMode.Ripple && _animationManager.IsAnimating())
                     for (var i = 0; i < _animationManager.GetAnimationCount(); i++)
@@ -366,7 +369,7 @@ namespace HecopUI_Winforms.Controls
                 }
 
 
-                using (Brush brr = new TextureBrush(bitmap))
+                Brush brr = new TextureBrush(bitmap);
                     e.Graphics.FillPath(brr, SGP);
             }
 
@@ -540,7 +543,8 @@ namespace HecopUI_Winforms.Controls
                 switch (animationMode)
                 {
                     case AnimationMode.None:
-                        _animationManager.InterruptAnimation = true;
+                        _animationManager.Singular = true;
+                        _animationManager.Increment = 0.03;
                         break;
                     case AnimationMode.Ripple:
                         _animationManager.Singular = false;
@@ -560,15 +564,18 @@ namespace HecopUI_Winforms.Controls
         public HButton()
         {
             SetStyle(GetAppResources.SetControlStyles(), true);
-            _animationManager = new AnimationManager()
+            _animationManager = new AnimationManager(true)
             {
                 Increment = 0.03,
                 AnimationType = Animations.AnimationType.EaseOut
             };
-            _animationManager.Singular = false;
-            BackColor = Color.Transparent;
+            //_animationManager.SetProgress(0);
+            object[] b = new object[] { new Point(0, 0) };
+            _animationManager.StartNewAnimation(AnimationDirection.Out) ;
+            _animationManager.SetData(b);
+         
+           
             ForeColor = Color.White;
-            BackColor = Color.Transparent;
             if (IsAutoSize == true)
             {
                 SizeF n = TextRenderer.MeasureText(Text, Font);
@@ -601,7 +608,7 @@ namespace HecopUI_Winforms.Controls
         protected override void OnMouseEnter(EventArgs e)
         {
             ButHo = true;
-           if(animationMode== AnimationMode.ColorTransition && _animationManager.Singular==true)
+           if(animationMode== AnimationMode.ColorTransition)
                 _animationManager.StartNewAnimation(AnimationDirection.In);
 
             Invalidate();
@@ -611,7 +618,7 @@ namespace HecopUI_Winforms.Controls
         protected override void OnMouseLeave(EventArgs e)
         {
             ButHo = false;
-            if (AnimationMode == AnimationMode.ColorTransition && _animationManager.Singular == true)
+            if (AnimationMode == AnimationMode.ColorTransition)
                 _animationManager.StartNewAnimation(AnimationDirection.Out);
             Invalidate();
             base.OnMouseLeave(e);
@@ -621,7 +628,7 @@ namespace HecopUI_Winforms.Controls
         protected override void OnMouseDown(MouseEventArgs e)
         {
             ButDo = true;
-            if (AnimationMode == AnimationMode.Ripple && _animationManager.Singular==false)
+            if (AnimationMode == AnimationMode.Ripple)
                 _animationManager.StartNewAnimation(Animations.AnimationDirection.In, e.Location);
             Invalidate();
             base.OnMouseDown(e);

@@ -382,8 +382,8 @@ namespace HecopUI_Winforms.Controls
 
                             using (var tb = new SolidBrush(i == SelectedIndex ? SelectedTextColor : UnselectedTextColor))
                                 g.DrawString(TabPages[i].Text, Font, tb, new RectangleF(3 + GetTabRect(i).X + tpa.Left + (ImageList != null ? ImageList.ImageSize.Width + 6 : 0),
-                                   GetTabRect(i).Y + tpa.Top + (Alignment == TabAlignment.Bottom ? 3 : 0), GetTabRect(i).Width - tpa.Right - 2 - (ImageList != null ? ImageList.ImageSize.Width + 6 : 0)
-                                   , GetTabRect(i).Height - tpa.Bottom - (Alignment == TabAlignment.Bottom ? 3 : 0)), SF);
+                                    GetTabRect(i).Y + tpa.Top + (Alignment == TabAlignment.Bottom ? 3 : 0), GetTabRect(i).Width - tpa.Right - 2 - (ImageList != null ? ImageList.ImageSize.Width + 6 : 0)
+                                    , GetTabRect(i).Height - tpa.Bottom - (Alignment == TabAlignment.Bottom ? 3 : 0)), SF);
                         }
 
                    
@@ -432,8 +432,8 @@ namespace HecopUI_Winforms.Controls
                                     g.DrawImage(img, imgRect);
                                 }
                                 g.DrawString(TabPages[i].Text, Font, tb, new RectangleF(3+GetTabRect(i).X + tpa.Left+ (ImageList != null ? ImageList.ImageSize.Width+6 : 0),
-                                    GetTabRect(i).Y + tpa.Top + (Alignment== TabAlignment.Bottom? 3:0), GetTabRect(i).Width - tpa.Right-2 - (ImageList != null ? ImageList.ImageSize.Width + 6 : 0)
-                                    , GetTabRect(i).Height - tpa.Bottom - (Alignment== TabAlignment.Bottom?3:0 )), SF);
+                                    GetTabRect(i).Y + tpa.Top + (Alignment== TabAlignment.Bottom? 3:0) , GetTabRect(i).Width - tpa.Right-2 - (ImageList != null ? ImageList.ImageSize.Width + 6 : 0)
+                                    , GetTabRect(i).Height - tpa.Bottom - (Alignment== TabAlignment.Bottom?3:0 ) ), SF);
                             }
 
                         break;

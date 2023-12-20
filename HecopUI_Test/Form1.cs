@@ -40,5 +40,15 @@ namespace HecopUI_Test
         {
             hCheckBox1.Text = hCheckBox1.Name+" (Checked: "+ hCheckBox1.Checked+")";
         }
+
+        private void hCheckBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            hCheckBox2.Text = hCheckBox2.Name + " (Checked: " + hCheckBox2.Checked + ")";
+        }
+
+        private void hCheckBox3_CheckedChanged(object sender, EventArgs e)
+        {
+            hCheckBox3.Text = hCheckBox3.Name + " (Checked: " + hCheckBox3.Checked + ")";
+        }
     }
 }

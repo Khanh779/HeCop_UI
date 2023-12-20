@@ -642,7 +642,7 @@ namespace HecopUI_Winforms.Forms
                     using (Pen closePen = new Pen(new SolidBrush(DrawHelper.BlendColor(CB.IconCloseColor, CB.IconCloseHoverColor, closestep)), 1.5f))
                         DrawClose(g, closePen);
 
-                    //if (MaximizeBox && MinimizeBox)
+                    if(MaximizeBox==true)
                     using (Pen maximizePen = new Pen(new SolidBrush(DrawHelper.BlendColor(CB.IconMaximizeColor, CB.IconMinimizeHoverColor, maxstep)), 1.5f))
                         DrawMaximize_Restore(g, maximizePen);
 

@@ -79,6 +79,14 @@ namespace HecopUI_Test
             this.hButton1 = new HecopUI_Winforms.Controls.HButton();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.hRadioButton3 = new HecopUI_Winforms.Controls.HRadioButton();
+            this.hRadioButton2 = new HecopUI_Winforms.Controls.HRadioButton();
+            this.hCheckBox3 = new HecopUI_Winforms.Controls.HCheckBox();
+            this.hCheckBox2 = new HecopUI_Winforms.Controls.HCheckBox();
+            this.hRadioButton1 = new HecopUI_Winforms.Controls.HRadioButton();
+            this.hToggleButton21 = new HecopUI_Winforms.Controls.HToggleButton2();
+            this.hToggleButton11 = new HecopUI_Winforms.Controls.HToggleButton1();
+            this.hToggleButton1 = new HecopUI_Winforms.Controls.HToggleButton();
             this.hCheckBox1 = new HecopUI_Winforms.Controls.HCheckBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage6 = new System.Windows.Forms.TabPage();
@@ -1568,6 +1576,14 @@ namespace HecopUI_Test
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.tabPage3.Controls.Add(this.hRadioButton3);
+            this.tabPage3.Controls.Add(this.hRadioButton2);
+            this.tabPage3.Controls.Add(this.hCheckBox3);
+            this.tabPage3.Controls.Add(this.hCheckBox2);
+            this.tabPage3.Controls.Add(this.hRadioButton1);
+            this.tabPage3.Controls.Add(this.hToggleButton21);
+            this.tabPage3.Controls.Add(this.hToggleButton11);
+            this.tabPage3.Controls.Add(this.hToggleButton1);
             this.tabPage3.Controls.Add(this.hCheckBox1);
             this.tabPage3.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.tabPage3.Location = new System.Drawing.Point(139, 4);
@@ -1575,13 +1591,181 @@ namespace HecopUI_Test
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(757, 546);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Options";
+            this.tabPage3.Text = "Switch/ Options";
+            // 
+            // hRadioButton3
+            // 
+            this.hRadioButton3.AlwayCheckedInstance = true;
+            this.hRadioButton3.Checked = false;
+            this.hRadioButton3.DashStyle = System.Drawing.Drawing2D.DashStyle.Dot;
+            this.hRadioButton3.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(198)))), ((int)(((byte)(202)))));
+            this.hRadioButton3.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(187)))), ((int)(((byte)(189)))));
+            this.hRadioButton3.EnabledCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(138)))), ((int)(((byte)(118)))));
+            this.hRadioButton3.EnabledTextColor = System.Drawing.Color.LightGray;
+            this.hRadioButton3.EnabledUnCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(158)))), ((int)(((byte)(161)))));
+            this.hRadioButton3.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(142)))));
+            this.hRadioButton3.Location = new System.Drawing.Point(34, 221);
+            this.hRadioButton3.Name = "hRadioButton3";
+            this.hRadioButton3.RippleAlpha = 60;
+            this.hRadioButton3.RippleColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(188)))), ((int)(((byte)(162)))));
+            this.hRadioButton3.Size = new System.Drawing.Size(299, 28);
+            this.hRadioButton3.TabIndex = 8;
+            this.hRadioButton3.Text = "hRadioButton3";
+            this.hRadioButton3.TextRenderHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.hRadioButton3.TextTrim = System.Drawing.StringTrimming.EllipsisCharacter;
+            // 
+            // hRadioButton2
+            // 
+            this.hRadioButton2.AlwayCheckedInstance = true;
+            this.hRadioButton2.Checked = false;
+            this.hRadioButton2.DashStyle = System.Drawing.Drawing2D.DashStyle.Dot;
+            this.hRadioButton2.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(198)))), ((int)(((byte)(202)))));
+            this.hRadioButton2.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(187)))), ((int)(((byte)(189)))));
+            this.hRadioButton2.EnabledCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(138)))), ((int)(((byte)(118)))));
+            this.hRadioButton2.EnabledTextColor = System.Drawing.Color.LightGray;
+            this.hRadioButton2.EnabledUnCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(158)))), ((int)(((byte)(161)))));
+            this.hRadioButton2.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(142)))));
+            this.hRadioButton2.Location = new System.Drawing.Point(34, 187);
+            this.hRadioButton2.Name = "hRadioButton2";
+            this.hRadioButton2.RippleAlpha = 60;
+            this.hRadioButton2.RippleColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(188)))), ((int)(((byte)(162)))));
+            this.hRadioButton2.Size = new System.Drawing.Size(299, 28);
+            this.hRadioButton2.TabIndex = 7;
+            this.hRadioButton2.Text = "hRadioButton2";
+            this.hRadioButton2.TextRenderHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.hRadioButton2.TextTrim = System.Drawing.StringTrimming.EllipsisCharacter;
+            // 
+            // hCheckBox3
+            // 
+            this.hCheckBox3.CheckBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.hCheckBox3.CheckColor = System.Drawing.Color.White;
+            this.hCheckBox3.Checked = false;
+            this.hCheckBox3.DashStyle = System.Drawing.Drawing2D.DashStyle.Dot;
+            this.hCheckBox3.DisabledColor = System.Drawing.Color.Gray;
+            this.hCheckBox3.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(187)))), ((int)(((byte)(189)))));
+            this.hCheckBox3.EnabledCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(138)))), ((int)(((byte)(118)))));
+            this.hCheckBox3.EnabledTextColor = System.Drawing.Color.LightGray;
+            this.hCheckBox3.EnabledUnCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(158)))), ((int)(((byte)(161)))));
+            this.hCheckBox3.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(138)))), ((int)(((byte)(118)))));
+            this.hCheckBox3.Location = new System.Drawing.Point(34, 101);
+            this.hCheckBox3.Name = "hCheckBox3";
+            this.hCheckBox3.RippleAlpha = 60;
+            this.hCheckBox3.RippleColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(148)))));
+            this.hCheckBox3.Size = new System.Drawing.Size(299, 28);
+            this.hCheckBox3.TabIndex = 6;
+            this.hCheckBox3.Text = "hCheckBox3";
+            this.hCheckBox3.TextRenderHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.hCheckBox3.TextTrim = System.Drawing.StringTrimming.EllipsisCharacter;
+            this.hCheckBox3.CheckedChanged += new System.EventHandler(this.hCheckBox3_CheckedChanged);
+            // 
+            // hCheckBox2
+            // 
+            this.hCheckBox2.CheckBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.hCheckBox2.CheckColor = System.Drawing.Color.White;
+            this.hCheckBox2.Checked = false;
+            this.hCheckBox2.DashStyle = System.Drawing.Drawing2D.DashStyle.Dot;
+            this.hCheckBox2.DisabledColor = System.Drawing.Color.Gray;
+            this.hCheckBox2.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(187)))), ((int)(((byte)(189)))));
+            this.hCheckBox2.EnabledCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(138)))), ((int)(((byte)(118)))));
+            this.hCheckBox2.EnabledTextColor = System.Drawing.Color.LightGray;
+            this.hCheckBox2.EnabledUnCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(158)))), ((int)(((byte)(161)))));
+            this.hCheckBox2.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(138)))), ((int)(((byte)(118)))));
+            this.hCheckBox2.Location = new System.Drawing.Point(34, 67);
+            this.hCheckBox2.Name = "hCheckBox2";
+            this.hCheckBox2.RippleAlpha = 60;
+            this.hCheckBox2.RippleColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(148)))));
+            this.hCheckBox2.Size = new System.Drawing.Size(299, 28);
+            this.hCheckBox2.TabIndex = 5;
+            this.hCheckBox2.Text = "hCheckBox2";
+            this.hCheckBox2.TextRenderHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.hCheckBox2.TextTrim = System.Drawing.StringTrimming.EllipsisCharacter;
+            this.hCheckBox2.CheckedChanged += new System.EventHandler(this.hCheckBox2_CheckedChanged);
+            // 
+            // hRadioButton1
+            // 
+            this.hRadioButton1.AlwayCheckedInstance = true;
+            this.hRadioButton1.Checked = true;
+            this.hRadioButton1.DashStyle = System.Drawing.Drawing2D.DashStyle.Dot;
+            this.hRadioButton1.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(198)))), ((int)(((byte)(202)))));
+            this.hRadioButton1.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(187)))), ((int)(((byte)(189)))));
+            this.hRadioButton1.EnabledCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(138)))), ((int)(((byte)(118)))));
+            this.hRadioButton1.EnabledTextColor = System.Drawing.Color.LightGray;
+            this.hRadioButton1.EnabledUnCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(158)))), ((int)(((byte)(161)))));
+            this.hRadioButton1.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(142)))));
+            this.hRadioButton1.Location = new System.Drawing.Point(34, 153);
+            this.hRadioButton1.Name = "hRadioButton1";
+            this.hRadioButton1.RippleAlpha = 60;
+            this.hRadioButton1.RippleColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(188)))), ((int)(((byte)(162)))));
+            this.hRadioButton1.Size = new System.Drawing.Size(299, 28);
+            this.hRadioButton1.TabIndex = 4;
+            this.hRadioButton1.Text = "hRadioButton1";
+            this.hRadioButton1.TextRenderHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.hRadioButton1.TextTrim = System.Drawing.StringTrimming.EllipsisCharacter;
+            // 
+            // hToggleButton21
+            // 
+            this.hToggleButton21.BackColor = System.Drawing.Color.Transparent;
+            this.hToggleButton21.BorderColor = System.Drawing.Color.Gray;
+            this.hToggleButton21.BorderWidth = 1F;
+            this.hToggleButton21.Location = new System.Drawing.Point(45, 359);
+            this.hToggleButton21.MinimumSize = new System.Drawing.Size(47, 22);
+            this.hToggleButton21.Name = "hToggleButton21";
+            this.hToggleButton21.OffColor = System.Drawing.Color.DimGray;
+            this.hToggleButton21.OffLeverColor = System.Drawing.Color.LightGray;
+            this.hToggleButton21.OnColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(138)))), ((int)(((byte)(118)))));
+            this.hToggleButton21.OnLeverColor = System.Drawing.Color.LightGray;
+            this.hToggleButton21.Padding = new System.Windows.Forms.Padding(5);
+            this.hToggleButton21.Size = new System.Drawing.Size(47, 23);
+            this.hToggleButton21.SliderWidth = 1F;
+            this.hToggleButton21.TabIndex = 3;
+            this.hToggleButton21.Text = "hToggleButton21";
+            this.hToggleButton21.ValueChecked = true;
+            // 
+            // hToggleButton11
+            // 
+            this.hToggleButton11.ActiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(138)))), ((int)(((byte)(118)))));
+            this.hToggleButton11.ActiveText = "ON";
+            this.hToggleButton11.BackColor = System.Drawing.Color.Transparent;
+            this.hToggleButton11.ForeColor = System.Drawing.Color.White;
+            this.hToggleButton11.InActiveColor = System.Drawing.Color.DimGray;
+            this.hToggleButton11.InActiveText = "OFF";
+            this.hToggleButton11.Location = new System.Drawing.Point(45, 313);
+            this.hToggleButton11.MinimumSize = new System.Drawing.Size(56, 26);
+            this.hToggleButton11.Name = "hToggleButton11";
+            this.hToggleButton11.ShowStatusText = true;
+            this.hToggleButton11.Size = new System.Drawing.Size(56, 26);
+            this.hToggleButton11.SliderColor = System.Drawing.Color.DarkGray;
+            this.hToggleButton11.TabIndex = 2;
+            this.hToggleButton11.Text = "hToggleButton11";
+            this.hToggleButton11.TextColor = System.Drawing.Color.White;
+            this.hToggleButton11.TextRendering = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.hToggleButton11.ToggleState = HecopUI_Winforms.Controls.HToggleButton1.ToggleButtonState.OFF;
+            // 
+            // hToggleButton1
+            // 
+            this.hToggleButton1.BorderColor = System.Drawing.Color.LightGray;
+            this.hToggleButton1.BorderLeverColor = System.Drawing.Color.DarkGray;
+            this.hToggleButton1.IsOn = false;
+            this.hToggleButton1.LeverColor = System.Drawing.Color.White;
+            this.hToggleButton1.Location = new System.Drawing.Point(45, 268);
+            this.hToggleButton1.Name = "hToggleButton1";
+            this.hToggleButton1.OffColor = System.Drawing.Color.DimGray;
+            this.hToggleButton1.OffText = "Off";
+            this.hToggleButton1.OnColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(138)))), ((int)(((byte)(118)))));
+            this.hToggleButton1.OnText = "On";
+            this.hToggleButton1.Radius = 13.5F;
+            this.hToggleButton1.Size = new System.Drawing.Size(54, 29);
+            this.hToggleButton1.StatusColor = System.Drawing.Color.White;
+            this.hToggleButton1.TabIndex = 1;
+            this.hToggleButton1.Text = "hToggleButton1";
+            this.hToggleButton1.TextEnabled = true;
+            this.hToggleButton1.TextRenderHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             // 
             // hCheckBox1
             // 
             this.hCheckBox1.CheckBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.hCheckBox1.CheckColor = System.Drawing.Color.White;
-            this.hCheckBox1.Checked = false;
+            this.hCheckBox1.Checked = true;
             this.hCheckBox1.DashStyle = System.Drawing.Drawing2D.DashStyle.Dot;
             this.hCheckBox1.DisabledColor = System.Drawing.Color.Gray;
             this.hCheckBox1.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(187)))), ((int)(((byte)(189)))));
@@ -1589,7 +1773,7 @@ namespace HecopUI_Test
             this.hCheckBox1.EnabledTextColor = System.Drawing.Color.LightGray;
             this.hCheckBox1.EnabledUnCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(158)))), ((int)(((byte)(161)))));
             this.hCheckBox1.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(138)))), ((int)(((byte)(118)))));
-            this.hCheckBox1.Location = new System.Drawing.Point(60, 61);
+            this.hCheckBox1.Location = new System.Drawing.Point(34, 33);
             this.hCheckBox1.Name = "hCheckBox1";
             this.hCheckBox1.RippleAlpha = 60;
             this.hCheckBox1.RippleColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(148)))));
@@ -1715,6 +1899,14 @@ namespace HecopUI_Test
         private HecopUI_Winforms.Controls.HTitleSubButton hTitleSubButton8;
         private HecopUI_Winforms.Controls.HTitleSubButton hTitleSubButton9;
         private HecopUI_Winforms.Controls.HCheckBox hCheckBox1;
+        private HecopUI_Winforms.Controls.HToggleButton2 hToggleButton21;
+        private HecopUI_Winforms.Controls.HToggleButton1 hToggleButton11;
+        private HecopUI_Winforms.Controls.HToggleButton hToggleButton1;
+        private HecopUI_Winforms.Controls.HRadioButton hRadioButton1;
+        private HecopUI_Winforms.Controls.HCheckBox hCheckBox3;
+        private HecopUI_Winforms.Controls.HCheckBox hCheckBox2;
+        private HecopUI_Winforms.Controls.HRadioButton hRadioButton3;
+        private HecopUI_Winforms.Controls.HRadioButton hRadioButton2;
     }
 }
 

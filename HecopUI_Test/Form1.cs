@@ -50,5 +50,10 @@ namespace HecopUI_Test
         {
             hCheckBox3.Text = hCheckBox3.Name + " (Checked: " + hCheckBox3.Checked + ")";
         }
+
+        private void hButton10_MouseClick(object sender, MouseEventArgs e)
+        {
+            hProgressBar2.ProgressValue = hProgressBar3.ProgressValue = new Random().Next(0, 100);
+        }
     }
 }

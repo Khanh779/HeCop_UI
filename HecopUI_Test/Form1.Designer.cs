@@ -89,12 +89,38 @@ namespace HecopUI_Test
             this.hToggleButton1 = new HecopUI_Winforms.Controls.HToggleButton();
             this.hCheckBox1 = new HecopUI_Winforms.Controls.HCheckBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.hProgressBar4 = new HecopUI_Winforms.Controls.HProgressBar();
+            this.hProgressBar5 = new HecopUI_Winforms.Controls.HProgressBar();
+            this.hProgressBar6 = new HecopUI_Winforms.Controls.HProgressBar();
+            this.hButton10 = new HecopUI_Winforms.Controls.HButton();
+            this.hProgressBar3 = new HecopUI_Winforms.Controls.HProgressBar();
+            this.hProgressBar2 = new HecopUI_Winforms.Controls.HProgressBar();
+            this.hCircularProgressBar2 = new HecopUI_Winforms.Controls.HCircularProgressBar();
+            this.hProgressBarWaterWave1 = new HecopUI_Winforms.Controls.HProgressBarWaterWave();
+            this.waveProgressLoading1 = new HecopUI_Winforms.Controls.WaveProgressLoading();
+            this.hProgressBar1 = new HecopUI_Winforms.Controls.HProgressBar();
+            this.hCircularProgressBar21 = new HecopUI_Winforms.Controls.HCircularProgressBar2();
+            this.hCircularProgressBar11 = new HecopUI_Winforms.Controls.HCircularProgressBar1();
+            this.hCircularProgressBar1 = new HecopUI_Winforms.Controls.HCircularProgressBar();
+            this.hDotProgressRing6 = new HecopUI_Winforms.Controls.HDotProgressRing();
+            this.hDotProgressRing5 = new HecopUI_Winforms.Controls.HDotProgressRing();
+            this.hDotProgressRing4 = new HecopUI_Winforms.Controls.HDotProgressRing();
+            this.hDotProgressRing3 = new HecopUI_Winforms.Controls.HDotProgressRing();
+            this.hDotProgressRing2 = new HecopUI_Winforms.Controls.HDotProgressRing();
+            this.hDotProgressRing1 = new HecopUI_Winforms.Controls.HDotProgressRing();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.hScrollBar3 = new HecopUI_Winforms.Controls.HScrollBar();
+            this.hScrollBar4 = new HecopUI_Winforms.Controls.HScrollBar();
+            this.hScrollBar2 = new HecopUI_Winforms.Controls.HScrollBar();
+            this.hScrollBar1 = new HecopUI_Winforms.Controls.HScrollBar();
             this.hTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            this.tabPage7.SuspendLayout();
             this.SuspendLayout();
             // 
             // hTabControl1
@@ -110,7 +136,9 @@ namespace HecopUI_Test
             this.hTabControl1.Controls.Add(this.tabPage3);
             this.hTabControl1.Controls.Add(this.tabPage4);
             this.hTabControl1.Controls.Add(this.tabPage6);
+            this.hTabControl1.Controls.Add(this.tabPage7);
             this.hTabControl1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.hTabControl1.CursorTabPages = System.Windows.Forms.Cursors.Default;
             this.hTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.hTabControl1.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.hTabControl1.ItemSize = new System.Drawing.Size(30, 135);
@@ -1566,6 +1594,7 @@ namespace HecopUI_Test
             // tabPage5
             // 
             this.tabPage5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.tabPage5.Cursor = System.Windows.Forms.Cursors.Default;
             this.tabPage5.Location = new System.Drawing.Point(139, 4);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
@@ -1787,6 +1816,26 @@ namespace HecopUI_Test
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.tabPage4.Controls.Add(this.hProgressBar4);
+            this.tabPage4.Controls.Add(this.hProgressBar5);
+            this.tabPage4.Controls.Add(this.hProgressBar6);
+            this.tabPage4.Controls.Add(this.hButton10);
+            this.tabPage4.Controls.Add(this.hProgressBar3);
+            this.tabPage4.Controls.Add(this.hProgressBar2);
+            this.tabPage4.Controls.Add(this.hCircularProgressBar2);
+            this.tabPage4.Controls.Add(this.hProgressBarWaterWave1);
+            this.tabPage4.Controls.Add(this.waveProgressLoading1);
+            this.tabPage4.Controls.Add(this.hProgressBar1);
+            this.tabPage4.Controls.Add(this.hCircularProgressBar21);
+            this.tabPage4.Controls.Add(this.hCircularProgressBar11);
+            this.tabPage4.Controls.Add(this.hCircularProgressBar1);
+            this.tabPage4.Controls.Add(this.hDotProgressRing6);
+            this.tabPage4.Controls.Add(this.hDotProgressRing5);
+            this.tabPage4.Controls.Add(this.hDotProgressRing4);
+            this.tabPage4.Controls.Add(this.hDotProgressRing3);
+            this.tabPage4.Controls.Add(this.hDotProgressRing2);
+            this.tabPage4.Controls.Add(this.hDotProgressRing1);
+            this.tabPage4.Cursor = System.Windows.Forms.Cursors.Default;
             this.tabPage4.Location = new System.Drawing.Point(139, 4);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
@@ -1794,15 +1843,485 @@ namespace HecopUI_Test
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Progress Bar";
             // 
+            // hProgressBar4
+            // 
+            this.hProgressBar4.AnimationMode = HecopUI_Winforms.Enums.ProgressAnimationMode.None;
+            this.hProgressBar4.BaseProgressColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.hProgressBar4.BaseProgressColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.hProgressBar4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.hProgressBar4.BorderWidth = 1;
+            this.hProgressBar4.ForeColor = System.Drawing.Color.White;
+            this.hProgressBar4.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.hProgressBar4.Location = new System.Drawing.Point(522, 239);
+            this.hProgressBar4.MaximumValue = 100;
+            this.hProgressBar4.MinimumValue = 0;
+            this.hProgressBar4.Name = "hProgressBar4";
+            this.hProgressBar4.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.hProgressBar4.ProgressColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(128)))), ((int)(((byte)(102)))));
+            this.hProgressBar4.ProgressColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(148)))), ((int)(((byte)(122)))));
+            this.hProgressBar4.ProgressValue = 32;
+            this.hProgressBar4.Radius = 5;
+            this.hProgressBar4.Size = new System.Drawing.Size(24, 260);
+            this.hProgressBar4.TabIndex = 18;
+            this.hProgressBar4.Text = "hProgressBar4";
+            // 
+            // hProgressBar5
+            // 
+            this.hProgressBar5.AnimationMode = HecopUI_Winforms.Enums.ProgressAnimationMode.Value;
+            this.hProgressBar5.BaseProgressColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.hProgressBar5.BaseProgressColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.hProgressBar5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.hProgressBar5.BorderWidth = 1;
+            this.hProgressBar5.ForeColor = System.Drawing.Color.White;
+            this.hProgressBar5.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.hProgressBar5.Location = new System.Drawing.Point(483, 239);
+            this.hProgressBar5.MaximumValue = 100;
+            this.hProgressBar5.MinimumValue = 0;
+            this.hProgressBar5.Name = "hProgressBar5";
+            this.hProgressBar5.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.hProgressBar5.ProgressColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(128)))), ((int)(((byte)(102)))));
+            this.hProgressBar5.ProgressColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(148)))), ((int)(((byte)(122)))));
+            this.hProgressBar5.ProgressValue = 32;
+            this.hProgressBar5.Radius = 5;
+            this.hProgressBar5.Size = new System.Drawing.Size(24, 260);
+            this.hProgressBar5.TabIndex = 17;
+            this.hProgressBar5.Text = "hProgressBar5";
+            // 
+            // hProgressBar6
+            // 
+            this.hProgressBar6.AnimationMode = HecopUI_Winforms.Enums.ProgressAnimationMode.Indeterminate;
+            this.hProgressBar6.BaseProgressColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.hProgressBar6.BaseProgressColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.hProgressBar6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.hProgressBar6.BorderWidth = 1;
+            this.hProgressBar6.ForeColor = System.Drawing.Color.White;
+            this.hProgressBar6.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.hProgressBar6.Location = new System.Drawing.Point(444, 239);
+            this.hProgressBar6.MaximumValue = 100;
+            this.hProgressBar6.MinimumValue = 0;
+            this.hProgressBar6.Name = "hProgressBar6";
+            this.hProgressBar6.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.hProgressBar6.ProgressColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(128)))), ((int)(((byte)(102)))));
+            this.hProgressBar6.ProgressColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(148)))), ((int)(((byte)(122)))));
+            this.hProgressBar6.ProgressValue = 32;
+            this.hProgressBar6.Radius = 5;
+            this.hProgressBar6.Size = new System.Drawing.Size(24, 260);
+            this.hProgressBar6.TabIndex = 16;
+            this.hProgressBar6.Text = "hProgressBar6";
+            // 
+            // hButton10
+            // 
+            this.hButton10.AnimationMode = HecopUI_Winforms.Enums.AnimationMode.None;
+            this.hButton10.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(148)))), ((int)(((byte)(128)))));
+            this.hButton10.BorderDownColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(128)))), ((int)(((byte)(108)))));
+            this.hButton10.BorderHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(148)))));
+            this.hButton10.BorderThickness = 1;
+            this.hButton10.ButtonColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.hButton10.ButtonColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.hButton10.ButtonDownColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.hButton10.ButtonDownColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.hButton10.ButtonHoverColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.hButton10.ButtonHoverColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.hButton10.ButtonTextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.hButton10.ClipRegion = false;
+            this.hButton10.DashStyle = System.Drawing.Drawing2D.DashStyle.Dot;
+            this.hButton10.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.hButton10.FocusBorderColor = System.Drawing.Color.White;
+            this.hButton10.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            this.hButton10.Image = null;
+            this.hButton10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.hButton10.ImagePadding = new System.Windows.Forms.Padding(0);
+            this.hButton10.ImageSize = new System.Drawing.Size(20, 20);
+            this.hButton10.IsAutoSize = false;
+            this.hButton10.Location = new System.Drawing.Point(654, 293);
+            this.hButton10.Name = "hButton10";
+            this.hButton10.Radius = 5;
+            this.hButton10.RippleColor = System.Drawing.Color.Black;
+            this.hButton10.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.hButton10.ShadowPadding = new System.Windows.Forms.Padding(0);
+            this.hButton10.ShadowRadius = 5;
+            this.hButton10.ShapeButtonType = HecopUI_Winforms.Enums.ShapeType.Rectangle;
+            this.hButton10.Size = new System.Drawing.Size(75, 29);
+            this.hButton10.SupportImageGif = false;
+            this.hButton10.TabIndex = 15;
+            this.hButton10.Text = "Random";
+            this.hButton10.TextDownColor = System.Drawing.Color.White;
+            this.hButton10.TextHoverColor = System.Drawing.Color.White;
+            this.hButton10.TextNormalColor = System.Drawing.Color.White;
+            this.hButton10.TextPadding = new System.Windows.Forms.Padding(0);
+            this.hButton10.TextRenderHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.hButton10.TextTrim = System.Drawing.StringTrimming.EllipsisCharacter;
+            this.hButton10.MouseClick += new System.Windows.Forms.MouseEventHandler(this.hButton10_MouseClick);
+            // 
+            // hProgressBar3
+            // 
+            this.hProgressBar3.AnimationMode = HecopUI_Winforms.Enums.ProgressAnimationMode.None;
+            this.hProgressBar3.BaseProgressColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.hProgressBar3.BaseProgressColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.hProgressBar3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.hProgressBar3.BorderWidth = 1;
+            this.hProgressBar3.ForeColor = System.Drawing.Color.White;
+            this.hProgressBar3.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.hProgressBar3.Location = new System.Drawing.Point(20, 469);
+            this.hProgressBar3.MaximumValue = 100;
+            this.hProgressBar3.MinimumValue = 0;
+            this.hProgressBar3.Name = "hProgressBar3";
+            this.hProgressBar3.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.hProgressBar3.ProgressColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(128)))), ((int)(((byte)(102)))));
+            this.hProgressBar3.ProgressColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(148)))), ((int)(((byte)(122)))));
+            this.hProgressBar3.ProgressValue = 32;
+            this.hProgressBar3.Radius = 5;
+            this.hProgressBar3.Size = new System.Drawing.Size(323, 18);
+            this.hProgressBar3.TabIndex = 14;
+            this.hProgressBar3.Text = "hProgressBar3";
+            // 
+            // hProgressBar2
+            // 
+            this.hProgressBar2.AnimationMode = HecopUI_Winforms.Enums.ProgressAnimationMode.Value;
+            this.hProgressBar2.BaseProgressColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.hProgressBar2.BaseProgressColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.hProgressBar2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.hProgressBar2.BorderWidth = 1;
+            this.hProgressBar2.ForeColor = System.Drawing.Color.White;
+            this.hProgressBar2.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.hProgressBar2.Location = new System.Drawing.Point(20, 445);
+            this.hProgressBar2.MaximumValue = 100;
+            this.hProgressBar2.MinimumValue = 0;
+            this.hProgressBar2.Name = "hProgressBar2";
+            this.hProgressBar2.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.hProgressBar2.ProgressColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(128)))), ((int)(((byte)(102)))));
+            this.hProgressBar2.ProgressColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(148)))), ((int)(((byte)(122)))));
+            this.hProgressBar2.ProgressValue = 32;
+            this.hProgressBar2.Radius = 5;
+            this.hProgressBar2.Size = new System.Drawing.Size(323, 18);
+            this.hProgressBar2.TabIndex = 13;
+            this.hProgressBar2.Text = "hProgressBar2";
+            // 
+            // hCircularProgressBar2
+            // 
+            this.hCircularProgressBar2.AnimationMode = HecopUI_Winforms.Controls.HCircularProgressBar.AnimationType.Indicator;
+            this.hCircularProgressBar2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(142)))));
+            this.hCircularProgressBar2.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.hCircularProgressBar2.InnerMargin = 2;
+            this.hCircularProgressBar2.InnerWidth = -1;
+            this.hCircularProgressBar2.Interval = 50;
+            this.hCircularProgressBar2.Location = new System.Drawing.Point(20, 256);
+            this.hCircularProgressBar2.Maximum = 100;
+            this.hCircularProgressBar2.Minimum = 0;
+            this.hCircularProgressBar2.Name = "hCircularProgressBar2";
+            this.hCircularProgressBar2.OuterColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.hCircularProgressBar2.OuterMargin = -10;
+            this.hCircularProgressBar2.OuterWidth = 10;
+            this.hCircularProgressBar2.ProgressBarValue = 40;
+            this.hCircularProgressBar2.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(142)))));
+            this.hCircularProgressBar2.ProgressTextMode = HecopUI_Winforms.Controls.HCircularProgressBar.TextMode.Percentage;
+            this.hCircularProgressBar2.ProgressWidth = 10;
+            this.hCircularProgressBar2.Size = new System.Drawing.Size(109, 109);
+            this.hCircularProgressBar2.TabIndex = 12;
+            this.hCircularProgressBar2.Text = "hCircularProgressBar2";
+            this.hCircularProgressBar2.TextMargin = new System.Windows.Forms.Padding(8, 8, 0, 0);
+            this.hCircularProgressBar2.TextRenderHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.hCircularProgressBar2.TextTrim = System.Drawing.StringTrimming.EllipsisCharacter;
+            // 
+            // hProgressBarWaterWave1
+            // 
+            this.hProgressBarWaterWave1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.hProgressBarWaterWave1.BorderThickness = 5;
+            this.hProgressBarWaterWave1.Location = new System.Drawing.Point(177, 256);
+            this.hProgressBarWaterWave1.Maximum = 100;
+            this.hProgressBarWaterWave1.Minimum = 0;
+            this.hProgressBarWaterWave1.Name = "hProgressBarWaterWave1";
+            this.hProgressBarWaterWave1.ProgressShape = HecopUI_Winforms.Controls.HProgressBarWaterWave.ProgressShapeType.Circular;
+            this.hProgressBarWaterWave1.Radius = 0;
+            this.hProgressBarWaterWave1.Size = new System.Drawing.Size(108, 111);
+            this.hProgressBarWaterWave1.TabIndex = 11;
+            this.hProgressBarWaterWave1.Text = "hProgressBarWaterWave1";
+            this.hProgressBarWaterWave1.Value = 50;
+            this.hProgressBarWaterWave1.WaveColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(148)))), ((int)(((byte)(122)))));
+            this.hProgressBarWaterWave1.WaveHeight = 30;
+            this.hProgressBarWaterWave1.WaveSleep = 50;
+            this.hProgressBarWaterWave1.WaveWidth = 200;
+            // 
+            // waveProgressLoading1
+            // 
+            this.waveProgressLoading1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(128)))), ((int)(((byte)(102)))));
+            this.waveProgressLoading1.Location = new System.Drawing.Point(447, 116);
+            this.waveProgressLoading1.Name = "waveProgressLoading1";
+            this.waveProgressLoading1.Progress = 22;
+            this.waveProgressLoading1.Size = new System.Drawing.Size(270, 136);
+            this.waveProgressLoading1.TabIndex = 10;
+            this.waveProgressLoading1.Text = "waveProgressLoading1";
+            this.waveProgressLoading1.WaveCount = 3;
+            this.waveProgressLoading1.WaveHeight = 10;
+            this.waveProgressLoading1.WaveWidth = 20;
+            // 
+            // hProgressBar1
+            // 
+            this.hProgressBar1.AnimationMode = HecopUI_Winforms.Enums.ProgressAnimationMode.Indeterminate;
+            this.hProgressBar1.BaseProgressColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.hProgressBar1.BaseProgressColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.hProgressBar1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.hProgressBar1.BorderWidth = 1;
+            this.hProgressBar1.ForeColor = System.Drawing.Color.White;
+            this.hProgressBar1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.hProgressBar1.Location = new System.Drawing.Point(20, 421);
+            this.hProgressBar1.MaximumValue = 100;
+            this.hProgressBar1.MinimumValue = 0;
+            this.hProgressBar1.Name = "hProgressBar1";
+            this.hProgressBar1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.hProgressBar1.ProgressColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(128)))), ((int)(((byte)(102)))));
+            this.hProgressBar1.ProgressColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(148)))), ((int)(((byte)(122)))));
+            this.hProgressBar1.ProgressValue = 32;
+            this.hProgressBar1.Radius = 5;
+            this.hProgressBar1.Size = new System.Drawing.Size(323, 18);
+            this.hProgressBar1.TabIndex = 9;
+            this.hProgressBar1.Text = "hProgressBar1";
+            // 
+            // hCircularProgressBar21
+            // 
+            this.hCircularProgressBar21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.hCircularProgressBar21.BarColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(142)))));
+            this.hCircularProgressBar21.BarColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(142)))));
+            this.hCircularProgressBar21.BarWidth = 6F;
+            this.hCircularProgressBar21.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.hCircularProgressBar21.ForeColor = System.Drawing.Color.DimGray;
+            this.hCircularProgressBar21.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.hCircularProgressBar21.LineColor = System.Drawing.Color.DimGray;
+            this.hCircularProgressBar21.LineWidth = 1;
+            this.hCircularProgressBar21.Location = new System.Drawing.Point(250, 127);
+            this.hCircularProgressBar21.Maximum = ((long)(100));
+            this.hCircularProgressBar21.MinimumSize = new System.Drawing.Size(100, 100);
+            this.hCircularProgressBar21.Name = "hCircularProgressBar21";
+            this.hCircularProgressBar21.ProgressShape = HecopUI_Winforms.Controls.HCircularProgressBar2._ProgressShape.Flat;
+            this.hCircularProgressBar21.Size = new System.Drawing.Size(109, 109);
+            this.hCircularProgressBar21.TabIndex = 8;
+            this.hCircularProgressBar21.Text = "57%";
+            this.hCircularProgressBar21.TextMode = HecopUI_Winforms.Controls.HCircularProgressBar2._TextMode.Percentage;
+            this.hCircularProgressBar21.Value = ((long)(57));
+            // 
+            // hCircularProgressBar11
+            // 
+            this.hCircularProgressBar11.BackColor = System.Drawing.Color.Transparent;
+            this.hCircularProgressBar11.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.hCircularProgressBar11.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.hCircularProgressBar11.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.hCircularProgressBar11.ForeColor = System.Drawing.Color.Gray;
+            this.hCircularProgressBar11.Location = new System.Drawing.Point(135, 127);
+            this.hCircularProgressBar11.Maximum = ((long)(100));
+            this.hCircularProgressBar11.MinimumSize = new System.Drawing.Size(100, 100);
+            this.hCircularProgressBar11.Name = "hCircularProgressBar11";
+            this.hCircularProgressBar11.ProgressColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(142)))));
+            this.hCircularProgressBar11.ProgressColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(142)))));
+            this.hCircularProgressBar11.ProgressShape = HecopUI_Winforms.Controls.HCircularProgressBar1._ProgressShape.Round;
+            this.hCircularProgressBar11.ProgressThickness = 8F;
+            this.hCircularProgressBar11.ProgresTextType = HecopUI_Winforms.Controls.HCircularProgressBar1.TextType.Percentage;
+            this.hCircularProgressBar11.Size = new System.Drawing.Size(109, 109);
+            this.hCircularProgressBar11.TabIndex = 7;
+            this.hCircularProgressBar11.Text = "hCircularProgressBar11";
+            this.hCircularProgressBar11.TextRenderHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.hCircularProgressBar11.Value = ((long)(21));
+            // 
+            // hCircularProgressBar1
+            // 
+            this.hCircularProgressBar1.AnimationMode = HecopUI_Winforms.Controls.HCircularProgressBar.AnimationType.None;
+            this.hCircularProgressBar1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(142)))));
+            this.hCircularProgressBar1.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.hCircularProgressBar1.InnerMargin = 2;
+            this.hCircularProgressBar1.InnerWidth = -1;
+            this.hCircularProgressBar1.Interval = 50;
+            this.hCircularProgressBar1.Location = new System.Drawing.Point(20, 127);
+            this.hCircularProgressBar1.Maximum = 100;
+            this.hCircularProgressBar1.Minimum = 0;
+            this.hCircularProgressBar1.Name = "hCircularProgressBar1";
+            this.hCircularProgressBar1.OuterColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.hCircularProgressBar1.OuterMargin = -10;
+            this.hCircularProgressBar1.OuterWidth = 10;
+            this.hCircularProgressBar1.ProgressBarValue = 10;
+            this.hCircularProgressBar1.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(142)))));
+            this.hCircularProgressBar1.ProgressTextMode = HecopUI_Winforms.Controls.HCircularProgressBar.TextMode.Percentage;
+            this.hCircularProgressBar1.ProgressWidth = 10;
+            this.hCircularProgressBar1.Size = new System.Drawing.Size(109, 109);
+            this.hCircularProgressBar1.TabIndex = 6;
+            this.hCircularProgressBar1.Text = "hCircularProgressBar1";
+            this.hCircularProgressBar1.TextMargin = new System.Windows.Forms.Padding(8, 8, 0, 0);
+            this.hCircularProgressBar1.TextRenderHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.hCircularProgressBar1.TextTrim = System.Drawing.StringTrimming.EllipsisCharacter;
+            // 
+            // hDotProgressRing6
+            // 
+            this.hDotProgressRing6.DotColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(128)))), ((int)(((byte)(102)))));
+            this.hDotProgressRing6.DotCount = 8;
+            this.hDotProgressRing6.Interval = 50;
+            this.hDotProgressRing6.Location = new System.Drawing.Point(401, 33);
+            this.hDotProgressRing6.Name = "hDotProgressRing6";
+            this.hDotProgressRing6.ProgressStyle = HecopUI_Winforms.Controls.HDotProgressRing.Style.Style6;
+            this.hDotProgressRing6.Radius = 5;
+            this.hDotProgressRing6.Size = new System.Drawing.Size(338, 37);
+            this.hDotProgressRing6.StartAnimation = true;
+            this.hDotProgressRing6.SupportTransparent = true;
+            this.hDotProgressRing6.TabIndex = 5;
+            this.hDotProgressRing6.Text = "hDotProgressRing6";
+            // 
+            // hDotProgressRing5
+            // 
+            this.hDotProgressRing5.DotColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(128)))), ((int)(((byte)(102)))));
+            this.hDotProgressRing5.DotCount = 8;
+            this.hDotProgressRing5.Interval = 50;
+            this.hDotProgressRing5.Location = new System.Drawing.Point(312, 18);
+            this.hDotProgressRing5.Name = "hDotProgressRing5";
+            this.hDotProgressRing5.ProgressStyle = HecopUI_Winforms.Controls.HDotProgressRing.Style.Style5;
+            this.hDotProgressRing5.Radius = 5;
+            this.hDotProgressRing5.Size = new System.Drawing.Size(67, 67);
+            this.hDotProgressRing5.StartAnimation = true;
+            this.hDotProgressRing5.SupportTransparent = true;
+            this.hDotProgressRing5.TabIndex = 4;
+            this.hDotProgressRing5.Text = "hDotProgressRing5";
+            // 
+            // hDotProgressRing4
+            // 
+            this.hDotProgressRing4.DotColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(128)))), ((int)(((byte)(102)))));
+            this.hDotProgressRing4.DotCount = 8;
+            this.hDotProgressRing4.Interval = 50;
+            this.hDotProgressRing4.Location = new System.Drawing.Point(239, 18);
+            this.hDotProgressRing4.Name = "hDotProgressRing4";
+            this.hDotProgressRing4.ProgressStyle = HecopUI_Winforms.Controls.HDotProgressRing.Style.Style4;
+            this.hDotProgressRing4.Radius = 5;
+            this.hDotProgressRing4.Size = new System.Drawing.Size(67, 67);
+            this.hDotProgressRing4.StartAnimation = true;
+            this.hDotProgressRing4.SupportTransparent = true;
+            this.hDotProgressRing4.TabIndex = 3;
+            this.hDotProgressRing4.Text = "hDotProgressRing4";
+            // 
+            // hDotProgressRing3
+            // 
+            this.hDotProgressRing3.DotColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(128)))), ((int)(((byte)(102)))));
+            this.hDotProgressRing3.DotCount = 8;
+            this.hDotProgressRing3.Interval = 50;
+            this.hDotProgressRing3.Location = new System.Drawing.Point(166, 18);
+            this.hDotProgressRing3.Name = "hDotProgressRing3";
+            this.hDotProgressRing3.ProgressStyle = HecopUI_Winforms.Controls.HDotProgressRing.Style.Style3;
+            this.hDotProgressRing3.Radius = 2;
+            this.hDotProgressRing3.Size = new System.Drawing.Size(67, 67);
+            this.hDotProgressRing3.StartAnimation = true;
+            this.hDotProgressRing3.SupportTransparent = true;
+            this.hDotProgressRing3.TabIndex = 2;
+            this.hDotProgressRing3.Text = "hDotProgressRing3";
+            // 
+            // hDotProgressRing2
+            // 
+            this.hDotProgressRing2.DotColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(128)))), ((int)(((byte)(102)))));
+            this.hDotProgressRing2.DotCount = 8;
+            this.hDotProgressRing2.Interval = 50;
+            this.hDotProgressRing2.Location = new System.Drawing.Point(93, 18);
+            this.hDotProgressRing2.Name = "hDotProgressRing2";
+            this.hDotProgressRing2.ProgressStyle = HecopUI_Winforms.Controls.HDotProgressRing.Style.Style2;
+            this.hDotProgressRing2.Radius = 5;
+            this.hDotProgressRing2.Size = new System.Drawing.Size(67, 67);
+            this.hDotProgressRing2.StartAnimation = true;
+            this.hDotProgressRing2.SupportTransparent = true;
+            this.hDotProgressRing2.TabIndex = 1;
+            this.hDotProgressRing2.Text = "hDotProgressRing2";
+            // 
+            // hDotProgressRing1
+            // 
+            this.hDotProgressRing1.DotColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(128)))), ((int)(((byte)(102)))));
+            this.hDotProgressRing1.DotCount = 8;
+            this.hDotProgressRing1.Interval = 50;
+            this.hDotProgressRing1.Location = new System.Drawing.Point(20, 18);
+            this.hDotProgressRing1.Name = "hDotProgressRing1";
+            this.hDotProgressRing1.ProgressStyle = HecopUI_Winforms.Controls.HDotProgressRing.Style.Style1;
+            this.hDotProgressRing1.Radius = 5;
+            this.hDotProgressRing1.Size = new System.Drawing.Size(67, 67);
+            this.hDotProgressRing1.StartAnimation = true;
+            this.hDotProgressRing1.SupportTransparent = true;
+            this.hDotProgressRing1.TabIndex = 0;
+            this.hDotProgressRing1.Text = "hDotProgressRing1";
+            // 
             // tabPage6
             // 
             this.tabPage6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.tabPage6.Cursor = System.Windows.Forms.Cursors.Default;
             this.tabPage6.Location = new System.Drawing.Point(139, 4);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage6.Size = new System.Drawing.Size(757, 546);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Switch";
+            // 
+            // tabPage7
+            // 
+            this.tabPage7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.tabPage7.Controls.Add(this.hScrollBar3);
+            this.tabPage7.Controls.Add(this.hScrollBar4);
+            this.tabPage7.Controls.Add(this.hScrollBar2);
+            this.tabPage7.Controls.Add(this.hScrollBar1);
+            this.tabPage7.Cursor = System.Windows.Forms.Cursors.Default;
+            this.tabPage7.Location = new System.Drawing.Point(139, 4);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage7.Size = new System.Drawing.Size(757, 546);
+            this.tabPage7.TabIndex = 6;
+            this.tabPage7.Text = "Scroll Bars";
+            // 
+            // hScrollBar3
+            // 
+            this.hScrollBar3.BarColor = System.Drawing.Color.LightGray;
+            this.hScrollBar3.BarRadius = 0;
+            this.hScrollBar3.HighlightOnWheel = true;
+            this.hScrollBar3.HoverThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(188)))), ((int)(((byte)(162)))));
+            this.hScrollBar3.Location = new System.Drawing.Point(481, 158);
+            this.hScrollBar3.Name = "hScrollBar3";
+            this.hScrollBar3.Orientation = HecopUI_Winforms.Enums.ScrollOrientate.Horizontal;
+            this.hScrollBar3.Size = new System.Drawing.Size(200, 10);
+            this.hScrollBar3.TabIndex = 4;
+            this.hScrollBar3.Text = "hScrollBar3";
+            this.hScrollBar3.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(142)))));
+            this.hScrollBar3.ThumbRadius = 0;
+            this.hScrollBar3.UseBarColor = true;
+            // 
+            // hScrollBar4
+            // 
+            this.hScrollBar4.BarColor = System.Drawing.Color.LightGray;
+            this.hScrollBar4.BarRadius = 0;
+            this.hScrollBar4.HighlightOnWheel = true;
+            this.hScrollBar4.HoverThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(188)))), ((int)(((byte)(162)))));
+            this.hScrollBar4.Location = new System.Drawing.Point(416, 56);
+            this.hScrollBar4.Name = "hScrollBar4";
+            this.hScrollBar4.Orientation = HecopUI_Winforms.Enums.ScrollOrientate.Vertical;
+            this.hScrollBar4.Size = new System.Drawing.Size(10, 200);
+            this.hScrollBar4.TabIndex = 3;
+            this.hScrollBar4.Text = "hScrollBar4";
+            this.hScrollBar4.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(142)))));
+            this.hScrollBar4.ThumbRadius = 0;
+            // 
+            // hScrollBar2
+            // 
+            this.hScrollBar2.BarColor = System.Drawing.Color.LightGray;
+            this.hScrollBar2.BarRadius = 0;
+            this.hScrollBar2.HoverThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(188)))), ((int)(((byte)(162)))));
+            this.hScrollBar2.Location = new System.Drawing.Point(152, 158);
+            this.hScrollBar2.Name = "hScrollBar2";
+            this.hScrollBar2.Orientation = HecopUI_Winforms.Enums.ScrollOrientate.Horizontal;
+            this.hScrollBar2.Size = new System.Drawing.Size(200, 10);
+            this.hScrollBar2.TabIndex = 2;
+            this.hScrollBar2.Text = "hScrollBar2";
+            this.hScrollBar2.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(142)))));
+            this.hScrollBar2.ThumbRadius = 0;
+            this.hScrollBar2.UseBarColor = true;
+            // 
+            // hScrollBar1
+            // 
+            this.hScrollBar1.BarColor = System.Drawing.Color.LightGray;
+            this.hScrollBar1.BarRadius = 0;
+            this.hScrollBar1.HoverThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(188)))), ((int)(((byte)(162)))));
+            this.hScrollBar1.Location = new System.Drawing.Point(87, 56);
+            this.hScrollBar1.Name = "hScrollBar1";
+            this.hScrollBar1.Orientation = HecopUI_Winforms.Enums.ScrollOrientate.Vertical;
+            this.hScrollBar1.Size = new System.Drawing.Size(10, 200);
+            this.hScrollBar1.TabIndex = 1;
+            this.hScrollBar1.Text = "hScrollBar1";
+            this.hScrollBar1.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(142)))));
+            this.hScrollBar1.ThumbRadius = 0;
             // 
             // Form1
             // 
@@ -1823,6 +2342,7 @@ namespace HecopUI_Test
             this.FormControlBox.MaximizeBoxHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.FormControlBox.MinimizeBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.FormControlBox.MinimizeBoxHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Padding = new System.Windows.Forms.Padding(1, 42, 1, 1);
@@ -1837,6 +2357,8 @@ namespace HecopUI_Test
             this.panel1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage7.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1907,6 +2429,30 @@ namespace HecopUI_Test
         private HecopUI_Winforms.Controls.HCheckBox hCheckBox2;
         private HecopUI_Winforms.Controls.HRadioButton hRadioButton3;
         private HecopUI_Winforms.Controls.HRadioButton hRadioButton2;
+        private HecopUI_Winforms.Controls.HDotProgressRing hDotProgressRing1;
+        private HecopUI_Winforms.Controls.HDotProgressRing hDotProgressRing6;
+        private HecopUI_Winforms.Controls.HDotProgressRing hDotProgressRing5;
+        private HecopUI_Winforms.Controls.HDotProgressRing hDotProgressRing4;
+        private HecopUI_Winforms.Controls.HDotProgressRing hDotProgressRing3;
+        private HecopUI_Winforms.Controls.HDotProgressRing hDotProgressRing2;
+        private System.Windows.Forms.TabPage tabPage7;
+        private HecopUI_Winforms.Controls.HScrollBar hScrollBar1;
+        private HecopUI_Winforms.Controls.HScrollBar hScrollBar3;
+        private HecopUI_Winforms.Controls.HScrollBar hScrollBar4;
+        private HecopUI_Winforms.Controls.HScrollBar hScrollBar2;
+        private HecopUI_Winforms.Controls.HProgressBarWaterWave hProgressBarWaterWave1;
+        private HecopUI_Winforms.Controls.WaveProgressLoading waveProgressLoading1;
+        private HecopUI_Winforms.Controls.HProgressBar hProgressBar1;
+        private HecopUI_Winforms.Controls.HCircularProgressBar2 hCircularProgressBar21;
+        private HecopUI_Winforms.Controls.HCircularProgressBar1 hCircularProgressBar11;
+        private HecopUI_Winforms.Controls.HCircularProgressBar hCircularProgressBar1;
+        private HecopUI_Winforms.Controls.HCircularProgressBar hCircularProgressBar2;
+        private HecopUI_Winforms.Controls.HProgressBar hProgressBar3;
+        private HecopUI_Winforms.Controls.HProgressBar hProgressBar2;
+        private HecopUI_Winforms.Controls.HButton hButton10;
+        private HecopUI_Winforms.Controls.HProgressBar hProgressBar4;
+        private HecopUI_Winforms.Controls.HProgressBar hProgressBar5;
+        private HecopUI_Winforms.Controls.HProgressBar hProgressBar6;
     }
 }
 

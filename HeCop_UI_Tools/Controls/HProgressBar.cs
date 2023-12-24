@@ -9,18 +9,8 @@ namespace HecopUI_Winforms.Controls
     public partial class HProgressBar : Control
     {
 
-        int interval = 50;
-        public int Interval
-        {
-            get { return interval; }
-            set
-            {
-                interval = value;
-                tmrIndi.Interval = value;
-                Invalidate();
-            }
-        }
-
+        int interval = 10;
+       
         int locx = 0;
 
         public HProgressBar()
@@ -30,12 +20,12 @@ namespace HecopUI_Winforms.Controls
             BorderColor = Color.Silver;
             tmrIndi = new System.Windows.Forms.Timer();
             tmrIndi.Tick += TmrIndi_Tick1;
-            //tmrIndi.Interval = Interval;
+            tmrIndi.Interval = interval;
         }
 
         protected override void OnCreateControl()
         {
-            if (base.IsHandleCreated)
+            if (IsHandleCreated)
                 // if (!DesignMode)
                 tmrIndi.Start();
             base.OnCreateControl();
@@ -46,22 +36,25 @@ namespace HecopUI_Winforms.Controls
             switch (animationMode)
             {
                 case Enums.ProgressAnimationMode.Indeterminate:
-                    if (locx < Width) locx += 10;
-                    if (locx > Width)
+                    if (locx < (Or == Orientation.Horizontal ? Width - 1 : Height - 1)) locx += 2;
+                    if (locx > (Or== Orientation.Horizontal? Width-1: Height-1))
                     {
-                        locx = 0 - (int)((AnV - MV) * (Width) / MAV);
+                        locx = 0 - (int)((PV - MV) * ((Or == Orientation.Horizontal ? Width - 1 : Height - 1)) / MAV);
                     }
                     break;
                 case Enums.ProgressAnimationMode.Value:
                     if (AnV != PV)
                     {
-                        if (AnV > PV)
+                        if (AnV < PV)
                         {
-                            PV += 1;
+                            AnV += 1;
                         }
-                        if (AnV < PV) PV -= 1;
+                        if (AnV > PV) AnV -= 1;
                     }
                     else tmrIndi.Stop();
+                    break;
+                case Enums.ProgressAnimationMode.None:
+                    tmrIndi.Stop();
                     break;
 
             }
@@ -91,46 +84,80 @@ namespace HecopUI_Winforms.Controls
 
         protected override void OnPaint(PaintEventArgs e)
         {
-            RectangleF recPro = new RectangleF(0.5f, 0.5f, Width - 1, Height - 1);
-            RectangleF recf = new RectangleF(0, 0, Width - 0.5f, Height);
+            RectangleF recPro;
+            RectangleF recf;
+
+            if (Or == Orientation.Horizontal)
+            {
+                recPro = new RectangleF(0.5f, 0.5f, Width - 1, Height - 1);
+                recf = new RectangleF(0, 0, Width - 0.5f, Height);
+            }
+            else // Orientation.Vertical
+            {
+                recPro = new RectangleF(0.5f, 0.5f, Width - 1, Height - 1);
+                recf = new RectangleF(0, 0, Width, Height - 0.5f);
+            }
+
             GetAppResources.GetControlGraphicsEffect(e.Graphics);
+
             using (Bitmap bitm = new Bitmap(Width, Height))
             using (Graphics g = Graphics.FromImage(bitm))
             using (GraphicsPath GP = HecopUI_Winforms.DrawHelper.GetRoundPath(recf, Radius, 0))
             using (LinearGradientBrush LB = new LinearGradientBrush(recPro, BPC1, BPC2, Linear))
             using (LinearGradientBrush LB1 = new LinearGradientBrush(recPro, PC1, PC2, Linear))
-            using (GraphicsPath GPV = AnimationMode == Enums.ProgressAnimationMode.None ? DrawHelper.GetRoundPath(recPro, Ra, 0) :
-            AnimationMode == Enums.ProgressAnimationMode.Value ? DrawHelper.GetRoundPath(recPro, Ra, 0) : DrawHelper.GetRoundPath(new RectangleF(locx, 0.5f, 30 + locx, Height - 1), Radius, 0))
             {
-                GetAppResources.GetControlGraphicsEffect(g);
-                g.FillPath(LB, GP);
                 switch (AnimationMode)
                 {
                     case Enums.ProgressAnimationMode.None:
-                        recPro.Width = (float)((AnV - MV) * (Width) / MAV);
-                        if (AnV != 0) g.FillPath(LB1, GPV);
+                        if(Or== Orientation.Horizontal)
+                        recPro.Width = (float)(((PV - MV) * recf.Width) / MAV);
+                        else recPro.Height = (float)(((PV - MV) * recf.Height) / MAV);
                         break;
                     case Enums.ProgressAnimationMode.Value:
-                        recPro.Width = (float)((PV - MV) * (Width) / MAV);
-                        if (AnV != 0) g.FillPath(LB1, GPV);
+                        if (Or == Orientation.Horizontal)
+                            recPro.Width = (float)(((AnV - MV) * recf.Width) / MAV);
+                        else recPro.Height = (float)(((AnV - MV) * recf.Height) / MAV);
                         break;
                     case Enums.ProgressAnimationMode.Indeterminate:
-                        g.FillPath(LB1, GPV);
                         break;
                 }
 
-                if (BT != 0)
+                using (GraphicsPath GPV = (AnimationMode == Enums.ProgressAnimationMode.None) ? DrawHelper.GetRoundPath(recPro, Ra, 0) :
+                    (AnimationMode == Enums.ProgressAnimationMode.Value) ? DrawHelper.GetRoundPath(recPro, Ra, 0) :
+                    DrawHelper.GetRoundPath(new RectangleF(
+                        0.5f + (Or == Orientation.Horizontal ? locx : 0),
+                        0.5f + (Or == Orientation.Vertical ? locx : 0),
+                        (Or == Orientation.Horizontal ?30+ locx : Width-1),
+                        (Or == Orientation.Vertical ?30+ locx : Height-1)), Radius, 0))
                 {
-                    using (Pen pen = new Pen(new SolidBrush(BC), BT))
-                    {
-                        pen.Alignment = PenAlignment.Inset;
-                        g.DrawPath(pen, HecopUI_Winforms.DrawHelper.GetRoundPath(recf, Radius, BorderWidth));
-                    }
-                }
-                e.Graphics.FillPath(new TextureBrush(bitm), GP);
+                    GetAppResources.GetControlGraphicsEffect(g);
+                    g.FillPath(LB, GP);
+                    if (PV != 0) g.FillPath(LB1, GPV);
 
+                    if (BT != 0)
+                    {
+                        using (Pen pen = new Pen(new SolidBrush(BC), BT))
+                        {
+                            pen.Alignment = PenAlignment.Inset;
+                            g.DrawPath(pen, HecopUI_Winforms.DrawHelper.GetRoundPath(recf, Radius, BorderWidth));
+                        }
+                    }
+                    e.Graphics.FillPath(new TextureBrush(bitm), GP);
+                }
             }
+
             base.OnPaint(e);
+        }
+
+        Orientation Or = Orientation.Horizontal;
+        public Orientation Orientation
+        {
+            get { return Or; }
+            set
+            {
+             
+                Or = value; Invalidate();
+            }
         }
 
         private LinearGradientMode Linear = LinearGradientMode.Horizontal;
@@ -146,19 +173,19 @@ namespace HecopUI_Winforms.Controls
         int AnV = 0;
         public int ProgressValue
         {
-            get { return AnV; }
+            get { return PV; }
             set
             {
                 if (value > MAV)
                 {
-                    AnV = MAV;
+                    PV = MAV;
                 }
                 if (value < MV)
                 {
-                    AnV = MV;
+                    PV = MV;
                 }
-                if (value >= MV || value <= MAV) AnV = value;
-
+                if (value >= MV || value <= MAV) PV = value;
+                if(AnimationMode== Enums.ProgressAnimationMode.Value && IsHandleCreated) tmrIndi.Start();
                 Invalidate();
             }
         }
@@ -276,7 +303,7 @@ namespace HecopUI_Winforms.Controls
             get { return MAV; }
             set
             {
-                if (value < AnV) MAV = AnV;
+                if (value < PV) MAV = PV;
                 else MAV = value; Invalidate();
             }
         }

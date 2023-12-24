@@ -242,12 +242,26 @@ namespace HecopUI_Winforms.Controls
             }
         }
 
+        Cursor cursors = Cursors.Default;
+        public Cursor CursorTabPages
+        {
+            get { return cursors; }
+            set
+            {
+                cursors= value;
+                foreach (TabPage tp in TabPages)
+                    tp.Cursor = cursors;
+                Invalidate();
+            }
+        }
+
         private System.Drawing.Text.TextRenderingHint TR = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
         public System.Drawing.Text.TextRenderingHint TextRenderHint
         {
             get { return TR; }
             set
             {
+          
                 TR = value; Invalidate();
             }
         }

@@ -134,10 +134,10 @@ namespace HecopUI_Winforms.Controls
         [DefaultValue(SCROLLBAR_DEFAULT_SIZE)]
         public int ScrollbarSize
         {
-            get { return Orientation == Enums.ScrollOrientate.Vertical ? Width : Height; }
+            get { return Orientation == ScrollOrientation.VerticalScroll ? Width : Height; }
             set
             {
-                if (Orientation == Enums.ScrollOrientate.Vertical)
+                if (Orientation == ScrollOrientation.VerticalScroll)
                     Width = value;
                 else
                     Height = value;
@@ -152,17 +152,15 @@ namespace HecopUI_Winforms.Controls
             set { highlightOnWheel = value; }
         }
 
-        private Enums.ScrollOrientate MaterialOrientation = Enums.ScrollOrientate.Vertical;
         private ScrollOrientation scrollOrientation = ScrollOrientation.VerticalScroll;
 
-        public Enums.ScrollOrientate Orientation
+        public ScrollOrientation Orientation
         {
-            get { return MaterialOrientation; }
+            get { return scrollOrientation; }
             set
             {
-                if (value == MaterialOrientation) return;
-                MaterialOrientation = value;
-                scrollOrientation = value == Enums.ScrollOrientate.Vertical ? ScrollOrientation.VerticalScroll : ScrollOrientation.HorizontalScroll;
+                if (value == scrollOrientation) return;
+                scrollOrientation = value;
                 Size = new Size(Height, Width);
                 SetupScrollBar();
             }
@@ -369,13 +367,13 @@ namespace HecopUI_Winforms.Controls
             progressTimer.Tick += ProgressTimerTick;
         }
 
-        public HScrollBar(Enums.ScrollOrientate orientation)
+        public HScrollBar(ScrollOrientation orientation)
             : this()
         {
             Orientation = orientation;
         }
 
-        public HScrollBar(Enums.ScrollOrientate orientation, int width)
+        public HScrollBar(ScrollOrientation orientation, int width)
             : this(orientation)
         {
             Width = width;
@@ -536,7 +534,7 @@ namespace HecopUI_Winforms.Controls
 
             int v = e.Delta / 120 * (maximum - minimum) / mouseWheelBarPartitions;
 
-            if (Orientation == Enums.ScrollOrientate.Vertical)
+            if (Orientation == ScrollOrientation.VerticalScroll)
             {
                 Value -= v;
             }
@@ -566,15 +564,15 @@ namespace HecopUI_Winforms.Controls
                 if (thumbRectangle.Contains(mouseLocation))
                 {
                     thumbClicked = true;
-                    thumbPosition = MaterialOrientation == Enums.ScrollOrientate.Vertical ? mouseLocation.Y - thumbRectangle.Y : mouseLocation.X - thumbRectangle.X;
+                    thumbPosition = scrollOrientation == ScrollOrientation.VerticalScroll ? mouseLocation.Y - thumbRectangle.Y : mouseLocation.X - thumbRectangle.X;
 
                     Invalidate(thumbRectangle);
                 }
                 else
                 {
-                    trackPosition = MaterialOrientation == Enums.ScrollOrientate.Vertical ? mouseLocation.Y : mouseLocation.X;
+                    trackPosition = scrollOrientation == ScrollOrientation.VerticalScroll ? mouseLocation.Y : mouseLocation.X;
 
-                    if (trackPosition < (MaterialOrientation == Enums.ScrollOrientate.Vertical ? thumbRectangle.Y : thumbRectangle.X))
+                    if (trackPosition < (scrollOrientation == ScrollOrientation.VerticalScroll ? thumbRectangle.Y : thumbRectangle.X))
                     {
                         topBarClicked = true;
                     }
@@ -588,7 +586,7 @@ namespace HecopUI_Winforms.Controls
             }
             else if (e.Button == MouseButtons.Right)
             {
-                trackPosition = MaterialOrientation == Enums.ScrollOrientate.Vertical ? e.Y : e.X;
+                trackPosition = scrollOrientation == ScrollOrientation.VerticalScroll ? e.Y : e.X;
             }
         }
 
@@ -648,8 +646,8 @@ namespace HecopUI_Winforms.Controls
                 {
                     int oldScrollValue = curValue;
 
-                    int pos = MaterialOrientation == Enums.ScrollOrientate.Vertical ? e.Location.Y : e.Location.X;
-                    int thumbSize = MaterialOrientation == Enums.ScrollOrientate.Vertical ? (pos / Height) / thumbHeight : (pos / Width) / thumbWidth;
+                    int pos = scrollOrientation == ScrollOrientation.VerticalScroll ? e.Location.Y : e.Location.X;
+                    int thumbSize = scrollOrientation == ScrollOrientation.VerticalScroll ? (pos / Height) / thumbHeight : (pos / Width) / thumbWidth;
 
                     if (pos <= (thumbTopLimit + thumbPosition))
                     {
@@ -669,7 +667,7 @@ namespace HecopUI_Winforms.Controls
 
                         int pixelRange, thumbPos;
 
-                        if (Orientation == Enums.ScrollOrientate.Vertical)
+                        if (Orientation == ScrollOrientation.VerticalScroll)
                         {
                             pixelRange = Height - thumbSize;
                             thumbPos = thumbRectangle.Y;
@@ -761,7 +759,7 @@ namespace HecopUI_Winforms.Controls
             Keys keyUp = Keys.Up;
             Keys keyDown = Keys.Down;
 
-            if (Orientation == Enums.ScrollOrientate.Horizontal)
+            if (Orientation == ScrollOrientation.HorizontalScroll)
             {
                 keyUp = Keys.Left;
                 keyDown = Keys.Right;
@@ -829,7 +827,7 @@ namespace HecopUI_Winforms.Controls
         {
             if (inUpdate) return;
 
-            if (Orientation == Enums.ScrollOrientate.Vertical)
+            if (Orientation == ScrollOrientation.VerticalScroll)
             {
                 thumbWidth = Width > 0 ? Width : 10;
                 thumbHeight = GetThumbSize();
@@ -913,9 +911,9 @@ namespace HecopUI_Winforms.Controls
                 return 0;
             }
 
-            int thumbSize = MaterialOrientation == Enums.ScrollOrientate.Vertical ? (thumbPosition / Height) / thumbHeight : (thumbPosition / Width) / thumbWidth;
+            int thumbSize = scrollOrientation == ScrollOrientation.VerticalScroll ? (thumbPosition / Height) / thumbHeight : (thumbPosition / Width) / thumbWidth;
 
-            if (Orientation == Enums.ScrollOrientate.Vertical)
+            if (Orientation == ScrollOrientation.VerticalScroll)
             {
                 pixelRange = Height - thumbSize;
             }
@@ -938,7 +936,7 @@ namespace HecopUI_Winforms.Controls
         private int GetThumbSize()
         {
             int trackSize =
-                MaterialOrientation == Enums.ScrollOrientate.Vertical ?
+                scrollOrientation == ScrollOrientation.VerticalScroll ?
                     Height : Width;
 
             if (maximum == 0 || largeChange == 0)
@@ -971,7 +969,7 @@ namespace HecopUI_Winforms.Controls
 
         private void ChangeThumbPosition(int position)
         {
-            if (Orientation == Enums.ScrollOrientate.Vertical)
+            if (Orientation == ScrollOrientation.VerticalScroll)
             {
                 thumbRectangle.Y = position;
             }
@@ -987,7 +985,7 @@ namespace HecopUI_Winforms.Controls
             ScrollEventType type = ScrollEventType.First;
             int thumbSize, thumbPos;
 
-            if (Orientation == Enums.ScrollOrientate.Vertical)
+            if (Orientation == ScrollOrientation.VerticalScroll)
             {
                 thumbPos = thumbRectangle.Y;
                 thumbSize = thumbRectangle.Height;

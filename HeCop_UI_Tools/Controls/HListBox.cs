@@ -223,7 +223,7 @@ namespace HecopUI_Winforms.Controls
             _multiKeyDown = false;
             _scrollBar = new HScrollBar()
             {
-                Orientation = Enums.ScrollOrientate.Vertical,
+                Orientation = ScrollOrientation.VerticalScroll,
                 Size = new Size(12, Height),
                 Maximum = _items.Count * _itemHeight,
                 SmallChange = _itemHeight,

@@ -36,11 +36,10 @@ namespace HecopUI_Winforms.Controls
             switch (animationMode)
             {
                 case Enums.ProgressAnimationMode.Indeterminate:
-                    if (locx < (Or == Orientation.Horizontal ? Width - 1 : Height - 1)) locx += 2;
-                    if (locx > (Or== Orientation.Horizontal? Width-1: Height-1))
-                    {
-                        locx = 0 - (int)((PV - MV) * ((Or == Orientation.Horizontal ? Width - 1 : Height - 1)) / MAV);
-                    }
+                    int a = ((Or == Orientation.Horizontal) ? Width - 1 : Height - 1);
+                    if (locx >= a) locx = 0 - (int)(((PV - MV) * a) / MAV);
+                    else  locx += 2;
+                   
                     break;
                 case Enums.ProgressAnimationMode.Value:
                     if (AnV != PV)
@@ -122,13 +121,14 @@ namespace HecopUI_Winforms.Controls
                         break;
                 }
 
-                using (GraphicsPath GPV = (AnimationMode == Enums.ProgressAnimationMode.None) ? DrawHelper.GetRoundPath(recPro, Ra, 0) :
-                    (AnimationMode == Enums.ProgressAnimationMode.Value) ? DrawHelper.GetRoundPath(recPro, Ra, 0) :
-                    DrawHelper.GetRoundPath(new RectangleF(
-                        0.5f + (Or == Orientation.Horizontal ? locx : 0),
-                        0.5f + (Or == Orientation.Vertical ? locx : 0),
-                        (Or == Orientation.Horizontal ?30+ locx : Width-1),
-                        (Or == Orientation.Vertical ?30+ locx : Height-1)), Radius, 0))
+                using (GraphicsPath GPV = (AnimationMode == Enums.ProgressAnimationMode.Indeterminate) ? DrawHelper.GetRoundPath(new RectangleF(
+                    0.5f + (Or == Orientation.Horizontal ? locx : 0),
+                    0.5f + (Or == Orientation.Vertical ? locx : 0),
+                    (Or == Orientation.Horizontal ? 30 + locx : Width - 1),
+                    (Or == Orientation.Vertical ? 30 + locx : Height - 1)), Radius, 0):
+                    DrawHelper.GetRoundPath(recPro, Ra, 0))
+
+
                 {
                     GetAppResources.GetControlGraphicsEffect(g);
                     g.FillPath(LB, GP);

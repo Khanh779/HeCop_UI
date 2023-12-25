@@ -53,7 +53,7 @@ namespace HecopUI_Test
 
         private void hButton10_MouseClick(object sender, MouseEventArgs e)
         {
-            hProgressBar2.ProgressValue = hProgressBar3.ProgressValue = new Random().Next(0, 100);
+           hProgressBar4.ProgressValue= hProgressBar5.ProgressValue=  hProgressBar2.ProgressValue = hProgressBar3.ProgressValue = new Random().Next(0, 100);
         }
     }
 }

@@ -156,6 +156,9 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Controls\Charts\Model\DataItems.cs" />
+    <Compile Include="Controls\HCircleAnglePicker.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controls\HDotProgressRing.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -182,9 +185,9 @@
     </Compile>
     <Compile Include="Effects\SlideEffect.cs" />
     <Compile Include="Enums\AnimationMode.cs" />
+    <Compile Include="Enums\CircleAnglePickerType.cs" />
     <Compile Include="Enums\LegendType.cs" />
     <Compile Include="Enums\ProgressAnimationMode.cs" />
-    <Compile Include="Enums\ScrollOrientation.cs" />
     <Compile Include="Enums\ShapeType.cs" />
     <Compile Include="Enums\SortMode.cs" />
     <Compile Include="Enums\TitleChartAlign.cs" />
@@ -582,6 +585,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Charts\ChartTip.resx">
       <DependentUpon>ChartTip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\HCircleAnglePicker.resx">
+      <DependentUpon>HCircleAnglePicker.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\hColorPicker.resx">
       <DependentUpon>hColorPicker.cs</DependentUpon>

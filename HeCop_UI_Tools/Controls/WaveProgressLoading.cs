@@ -1,22 +1,111 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace HecopUI_Winforms.Controls
 {
     public class WaveProgressLoading : Control
     {
-        private int waveCount;
-        private int waveWidth;
-        private int waveHeight;
-        private int progress;
+        private int waveCount = 5;
+        private int waveWidth = 10;
+        private int maxHeight = 60;
+        private List<double> progress;
+
+        public enum AnimationStyle
+        {
+            Ascending,
+            Descending,
+            Synchronized
+
+        }
+
+        AnimationStyle animationStyle = AnimationStyle.Ascending;
+        public AnimationStyle WaveAnimationStyle
+        {
+            get { return animationStyle; }
+            set
+            {
+                animationStyle = value;
+                switch(value)
+                {
+                       case AnimationStyle.Ascending:
+                        progress.Clear();
+                        for (int i = 0; i < waveCount; i++)
+                        {
+                            progress.Add(0);
+                        }
+                        break;
+                    case AnimationStyle.Descending:
+                        progress.Clear();
+                        for (int i = 0; i < waveCount; i++)
+                        {
+                            progress.Add(maxHeight);
+                        }
+                        break;
+                    case AnimationStyle.Synchronized:
+                        progress.Clear();
+                        for (int i = 0; i < waveCount; i++)
+                        {
+                            progress.Add(0);
+                        }
+                        break;
+                }    
+                Invalidate();
+            }
+        }
+
+
+        Timer timer;
 
         public WaveProgressLoading()
         {
-            waveCount = 5;
-            waveWidth = 20;
-            waveHeight = 10;
-            progress = 50;
+            SetStyle(ControlStyles.SupportsTransparentBackColor | ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint, value: true);
+            progress = new List<double>();
             DoubleBuffered = true;
+            timer = new Timer();
+            timer.Interval = 40;
+            timer.Tick += Timer_Tick; 
+            timer.Start();
+          
+        }
+
+      
+        double valAn = 0.03;
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            if (progress.Count > 0)
+            {
+                // Tăng giá trị của các hình chữ nhật theo thứ tự
+                for (int i = 0; i < progress.Count; i++)
+                {
+                  
+                   switch(WaveAnimationStyle)
+                    {
+                        case AnimationStyle.Ascending:
+                            progress[i] = progress[i>0? i-1:i]+= valAn;
+                            if (progress[i] > 1)
+                                progress[i] = 0;
+                            break;
+                        case AnimationStyle.Descending:
+                            progress[i] = progress[i > 0 ? i - 1 : i] -= valAn;
+                            if (progress[i] < 0)
+                                progress[i] = 1;
+                            break;
+                        case AnimationStyle.Synchronized:
+                            progress[i]+= valAn;
+                            if (progress[i] > 1)
+                                progress[i] = 0;
+                            break;
+                    }
+                   
+                  
+                }
+              
+            }
+
+            Invalidate();
         }
 
         public int WaveCount
@@ -27,6 +116,7 @@ namespace HecopUI_Winforms.Controls
                 if (value > 0)
                 {
                     waveCount = value;
+                 
                     Invalidate();
                 }
             }
@@ -45,27 +135,29 @@ namespace HecopUI_Winforms.Controls
             }
         }
 
-        public int WaveHeight
+     
+        public int MaxHeight
         {
-            get { return waveHeight; }
+            get { return maxHeight; }
             set
             {
                 if (value > 0)
                 {
-                    waveHeight = value;
+                    maxHeight = value;
                     Invalidate();
                 }
             }
         }
 
-        public int Progress
+        int spaceBetweenWave = 20;
+        public int SpaceBetweenWave
         {
-            get { return progress; }
+            get { return spaceBetweenWave; }
             set
             {
-                if (value >= 0 && value <= 100)
+                if (value > 0)
                 {
-                    progress = value;
+                    spaceBetweenWave = value;
                     Invalidate();
                 }
             }
@@ -74,29 +166,23 @@ namespace HecopUI_Winforms.Controls
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
-
-            int width = Width;
-            int height = Height;
-            int progressWidth = (int)(width * ((double)progress / 100));
             int x = 0;
-            int y = height / 2;
+
+            float totalWidth = waveCount * waveWidth + (waveCount - 1) * spaceBetweenWave; // Tổng chiều rộng của các hình chữ nhật và khoảng cách
+            float startX = (Width - totalWidth) / 2; // Vị trí x để căn giữa
 
             using (Brush brush = new SolidBrush(ForeColor))
             {
-                for (int i = 0; i < waveCount; i++)
-                {
-                    Rectangle rect = new Rectangle(x, y - (waveHeight / 2), width - waveWidth, waveHeight);
-                    e.Graphics.FillRectangle(brush, rect);
-                    x += waveWidth;
-                }
+                if (progress.Count > 0)
+                    for (int i = 0; i < progress.Count; i++)
+                    {
+                        var a = Convert.ToSingle(progress[i]) * maxHeight;
+                        float rectHeight = a;
+                        RectangleF rect = new RectangleF(startX + x, (Height - rectHeight) / 2, waveWidth, rectHeight);
+                        e.Graphics.FillRectangle(brush, rect);
+                        x += waveWidth + spaceBetweenWave; // Cộng thêm khoảng cách
+                    }
             }
-
-            /*
-            using (Brush brush = new SolidBrush(BackColor))
-            {
-                Rectangle rect = new Rectangle(x, 0, width - progressWidth, height);
-                e.Graphics.FillRectangle(brush, rect);
-            }*/
         }
     }
 }

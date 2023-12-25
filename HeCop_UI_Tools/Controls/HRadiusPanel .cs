@@ -146,9 +146,10 @@ namespace HecopUI_Winforms.Controls
         private void HRadiusPanel_Paint(object sender, PaintEventArgs e)
         {
             using (GraphicsPath gp = DrawHelper.GetRoundPath(new RectangleF(ShadowPadding.Left,
-     ShadowPadding.Top, Width - ShadowPadding.Right - ShadowPadding.Left, Height - ShadowPadding.Bottom - ShadowPadding.Top), Radius))
+        ShadowPadding.Top, Width - ShadowPadding.Right - ShadowPadding.Left, Height - ShadowPadding.Bottom - ShadowPadding.Top), Radius))
             using (LinearGradientBrush LB = new LinearGradientBrush(gp.GetBounds(), panelColor1, panelColor2, LinearGradient))
-            using (Bitmap Shado = HecopUI_Winforms.Ultils.DropShadow.Create(gp, ShadowColor, shadowRad))
+            using (GraphicsPath sgp = DrawHelper.GetRoundPath(new RectangleF(0,0,Width,Height), Radius))
+            using (Bitmap Shado = HecopUI_Winforms.Ultils.DropShadow.Create(sgp, ShadowColor, shadowRad))
             {
                 Shado.MakeTransparent();
                 // Tạo một đối tượng Graphics từ Bitmap để vẽ shadow
@@ -163,7 +164,7 @@ namespace HecopUI_Winforms.Controls
 
                 // Vẽ shadow lên đối tượng Graphics chính
                 using (var a = new TextureBrush(Shado))
-                    e.Graphics.FillPath(a, gp);
+                    e.Graphics.FillPath(a, sgp);
             }
 
 

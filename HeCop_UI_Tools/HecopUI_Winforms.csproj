@@ -183,6 +183,8 @@
     <Compile Include="Controls\WaveProgressLoading.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Effects\Image\BoxBlur.cs" />
+    <Compile Include="Effects\Image\GaussianBlur.cs" />
     <Compile Include="Effects\SlideEffect.cs" />
     <Compile Include="Enums\AnimationMode.cs" />
     <Compile Include="Enums\CircleAnglePickerType.cs" />
@@ -761,6 +763,7 @@
   <ItemGroup>
     <None Include="Resources\more1.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>

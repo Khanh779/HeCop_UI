@@ -33,6 +33,7 @@ namespace HecopUI_Test
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            HecopUI_Winforms.Controls.Charts.Series series1 = new HecopUI_Winforms.Controls.Charts.Series();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.colorDialog2 = new System.Windows.Forms.ColorDialog();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
@@ -79,6 +80,9 @@ namespace HecopUI_Test
             this.hButton2 = new HecopUI_Winforms.Controls.HButton();
             this.hButton1 = new HecopUI_Winforms.Controls.HButton();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.tabPage21 = new System.Windows.Forms.TabPage();
+            this.hTextBox1 = new HecopUI_Winforms.Controls.HTextBox();
+            this.hRichTextBox1 = new HecopUI_Winforms.Controls.HRichTextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.hRadioButton3 = new HecopUI_Winforms.Controls.HRadioButton();
             this.hRadioButton2 = new HecopUI_Winforms.Controls.HRadioButton();
@@ -109,7 +113,6 @@ namespace HecopUI_Test
             this.hDotProgressRing3 = new HecopUI_Winforms.Controls.HDotProgressRing();
             this.hDotProgressRing2 = new HecopUI_Winforms.Controls.HDotProgressRing();
             this.hDotProgressRing1 = new HecopUI_Winforms.Controls.HDotProgressRing();
-            this.tabPage6 = new System.Windows.Forms.TabPage();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.hScrollBar3 = new HecopUI_Winforms.Controls.HScrollBar();
             this.hScrollBar4 = new HecopUI_Winforms.Controls.HScrollBar();
@@ -117,14 +120,53 @@ namespace HecopUI_Test
             this.hScrollBar1 = new HecopUI_Winforms.Controls.HScrollBar();
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.hRadiusPanel1 = new HecopUI_Winforms.Controls.HRadiusPanel();
+            this.tabPage9 = new System.Windows.Forms.TabPage();
+            this.hTabControl3 = new HecopUI_Winforms.Controls.HTabControl();
+            this.tabPage12 = new System.Windows.Forms.TabPage();
+            this.tabPage13 = new System.Windows.Forms.TabPage();
+            this.hTabControl2 = new HecopUI_Winforms.Controls.HTabControl();
+            this.tabPage10 = new System.Windows.Forms.TabPage();
+            this.tabPage11 = new System.Windows.Forms.TabPage();
+            this.tabPage14 = new System.Windows.Forms.TabPage();
+            this.hTabControl4 = new HecopUI_Winforms.Controls.HTabControl();
+            this.tabPage15 = new System.Windows.Forms.TabPage();
+            this.hBarChart1 = new HecopUI_Winforms.Controls.Charts.HBarChart();
+            this.tabPage16 = new System.Windows.Forms.TabPage();
+            this.hLineAreaChart1 = new HecopUI_Winforms.Controls.Charts.HLineAreaChart();
+            this.tabPage17 = new System.Windows.Forms.TabPage();
+            this.hPieChart1 = new HecopUI_Winforms.Controls.Charts.HPieChart();
+            this.tabPage18 = new System.Windows.Forms.TabPage();
+            this.hRadarChart1 = new HecopUI_Winforms.Controls.Charts.HRadarChart();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.hSolidGauge1 = new HecopUI_Winforms.Controls.HSolidGauge();
+            this.hDigitalGauge1 = new HecopUI_Winforms.Controls.HDigitalGauge();
+            this.tabPage19 = new System.Windows.Forms.TabPage();
+            this.hClockDigital1 = new HecopUI_Winforms.Controls.HClockDigital();
+            this.hClockCircular1 = new HecopUI_Winforms.Controls.HClockCircular();
+            this.tabPage20 = new System.Windows.Forms.TabPage();
+            this.hCircleAnglePicker1 = new HecopUI_Winforms.Controls.HCircleAnglePicker();
+            this.hTextBox2 = new HecopUI_Winforms.Controls.HTextBox();
             this.hTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.tabPage21.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tabPage7.SuspendLayout();
             this.tabPage8.SuspendLayout();
+            this.tabPage9.SuspendLayout();
+            this.hTabControl3.SuspendLayout();
+            this.hTabControl2.SuspendLayout();
+            this.tabPage14.SuspendLayout();
+            this.hTabControl4.SuspendLayout();
+            this.tabPage15.SuspendLayout();
+            this.tabPage16.SuspendLayout();
+            this.tabPage17.SuspendLayout();
+            this.tabPage18.SuspendLayout();
+            this.tabPage6.SuspendLayout();
+            this.tabPage19.SuspendLayout();
+            this.tabPage20.SuspendLayout();
             this.SuspendLayout();
             // 
             // hTabControl1
@@ -137,11 +179,16 @@ namespace HecopUI_Test
             this.hTabControl1.Controls.Add(this.tabPage1);
             this.hTabControl1.Controls.Add(this.tabPage2);
             this.hTabControl1.Controls.Add(this.tabPage5);
+            this.hTabControl1.Controls.Add(this.tabPage21);
             this.hTabControl1.Controls.Add(this.tabPage3);
             this.hTabControl1.Controls.Add(this.tabPage4);
-            this.hTabControl1.Controls.Add(this.tabPage6);
             this.hTabControl1.Controls.Add(this.tabPage7);
             this.hTabControl1.Controls.Add(this.tabPage8);
+            this.hTabControl1.Controls.Add(this.tabPage9);
+            this.hTabControl1.Controls.Add(this.tabPage14);
+            this.hTabControl1.Controls.Add(this.tabPage6);
+            this.hTabControl1.Controls.Add(this.tabPage19);
+            this.hTabControl1.Controls.Add(this.tabPage20);
             this.hTabControl1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.hTabControl1.CursorTabPages = System.Windows.Forms.Cursors.Default;
             this.hTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1607,6 +1654,93 @@ namespace HecopUI_Test
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Labels";
             // 
+            // tabPage21
+            // 
+            this.tabPage21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.tabPage21.Controls.Add(this.hTextBox2);
+            this.tabPage21.Controls.Add(this.hTextBox1);
+            this.tabPage21.Controls.Add(this.hRichTextBox1);
+            this.tabPage21.Cursor = System.Windows.Forms.Cursors.Default;
+            this.tabPage21.Location = new System.Drawing.Point(139, 4);
+            this.tabPage21.Name = "tabPage21";
+            this.tabPage21.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage21.Size = new System.Drawing.Size(757, 546);
+            this.tabPage21.TabIndex = 13;
+            this.tabPage21.Text = "Text";
+            // 
+            // hTextBox1
+            // 
+            this.hTextBox1.AcceptsReturn = true;
+            this.hTextBox1.AcceptsTab = true;
+            this.hTextBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.hTextBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.hTextBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(142)))));
+            this.hTextBox1.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(148)))), ((int)(((byte)(122)))));
+            this.hTextBox1.BorderHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(188)))), ((int)(((byte)(162)))));
+            this.hTextBox1.BorderThickness = 1;
+            this.hTextBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.hTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.hTextBox1.Image = ((System.Drawing.Image)(resources.GetObject("hTextBox1.Image")));
+            this.hTextBox1.ImageOffsetX = 2;
+            this.hTextBox1.ImageSize = new System.Drawing.Size(20, 20);
+            this.hTextBox1.Location = new System.Drawing.Point(74, 53);
+            this.hTextBox1.MaxLength = 32767;
+            this.hTextBox1.Multiline = false;
+            this.hTextBox1.Name = "hTextBox1";
+            this.hTextBox1.Radius = 0;
+            this.hTextBox1.ReadOnly = false;
+            this.hTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.hTextBox1.ShortcutsEnabled = false;
+            this.hTextBox1.ShowBottomBorder = true;
+            this.hTextBox1.ShowTopBorder = true;
+            this.hTextBox1.Size = new System.Drawing.Size(198, 38);
+            this.hTextBox1.Style = HecopUI_Winforms.Controls.HTextBox.TextBoxStyle.Style1;
+            this.hTextBox1.TabIndex = 1;
+            this.hTextBox1.TexOffsetX = 2;
+            this.hTextBox1.Text = "hTextBox1";
+            this.hTextBox1.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.hTextBox1.TextBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.hTextBox1.TextBoxHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.hTextBox1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.hTextBox1.UseAnimation = false;
+            this.hTextBox1.UseSystemPasswordChar = false;
+            this.hTextBox1.WatermarkColor = System.Drawing.Color.Gray;
+            this.hTextBox1.WatermarkFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hTextBox1.WatermarkRendering = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.hTextBox1.WatermarkText = "Enter watermark";
+            // 
+            // hRichTextBox1
+            // 
+            this.hRichTextBox1.AcceptsTab = false;
+            this.hRichTextBox1.AutoWordSelection = false;
+            this.hRichTextBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(142)))));
+            this.hRichTextBox1.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(142)))));
+            this.hRichTextBox1.BorderHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(188)))), ((int)(((byte)(162)))));
+            this.hRichTextBox1.BorderThickness = 1;
+            this.hRichTextBox1.BulletIndent = 0;
+            this.hRichTextBox1.DetectUrls = true;
+            this.hRichTextBox1.EnableAutoDragDrop = false;
+            this.hRichTextBox1.HideSelection = false;
+            this.hRichTextBox1.Lines = new string[] {
+        "hRichTextBox1"};
+            this.hRichTextBox1.Location = new System.Drawing.Point(96, 241);
+            this.hRichTextBox1.MaxLength = 2147483647;
+            this.hRichTextBox1.MultiLine = true;
+            this.hRichTextBox1.Name = "hRichTextBox1";
+            this.hRichTextBox1.Radius = 1;
+            this.hRichTextBox1.ReadOnly = false;
+            this.hRichTextBox1.RichTextBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.hRichTextBox1.RichTextBoxHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.hRichTextBox1.RichTextBoxScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Both;
+            this.hRichTextBox1.SelectionRightIndent = 0;
+            this.hRichTextBox1.ShorcutEnabled = false;
+            this.hRichTextBox1.ShowSelectionMargin = false;
+            this.hRichTextBox1.Size = new System.Drawing.Size(258, 44);
+            this.hRichTextBox1.TabIndex = 0;
+            this.hRichTextBox1.Text = "hRichTextBox1";
+            this.hRichTextBox1.TextRenderHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.hRichTextBox1.WordWrap = true;
+            // 
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
@@ -2244,17 +2378,6 @@ namespace HecopUI_Test
             this.hDotProgressRing1.TabIndex = 0;
             this.hDotProgressRing1.Text = "hDotProgressRing1";
             // 
-            // tabPage6
-            // 
-            this.tabPage6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.tabPage6.Cursor = System.Windows.Forms.Cursors.Default;
-            this.tabPage6.Location = new System.Drawing.Point(139, 4);
-            this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(757, 546);
-            this.tabPage6.TabIndex = 5;
-            this.tabPage6.Text = "Switch";
-            // 
             // tabPage7
             // 
             this.tabPage7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
@@ -2272,26 +2395,26 @@ namespace HecopUI_Test
             // 
             // hScrollBar3
             // 
-            this.hScrollBar3.BarColor = System.Drawing.Color.LightGray;
+            this.hScrollBar3.BarColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.hScrollBar3.BarRadius = 0;
             this.hScrollBar3.HighlightOnWheel = true;
-            this.hScrollBar3.HoverThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(188)))), ((int)(((byte)(162)))));
+            this.hScrollBar3.HoverThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(148)))), ((int)(((byte)(142)))));
             this.hScrollBar3.Location = new System.Drawing.Point(481, 158);
             this.hScrollBar3.Name = "hScrollBar3";
             this.hScrollBar3.Orientation = System.Windows.Forms.ScrollOrientation.HorizontalScroll;
             this.hScrollBar3.Size = new System.Drawing.Size(200, 10);
             this.hScrollBar3.TabIndex = 4;
             this.hScrollBar3.Text = "hScrollBar3";
-            this.hScrollBar3.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(142)))));
+            this.hScrollBar3.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(128)))), ((int)(((byte)(122)))));
             this.hScrollBar3.ThumbRadius = 0;
             this.hScrollBar3.UseBarColor = true;
             // 
             // hScrollBar4
             // 
-            this.hScrollBar4.BarColor = System.Drawing.Color.LightGray;
+            this.hScrollBar4.BarColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.hScrollBar4.BarRadius = 0;
             this.hScrollBar4.HighlightOnWheel = true;
-            this.hScrollBar4.HoverThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(188)))), ((int)(((byte)(162)))));
+            this.hScrollBar4.HoverThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(148)))), ((int)(((byte)(142)))));
             this.hScrollBar4.Location = new System.Drawing.Point(416, 56);
             this.hScrollBar4.Maximum = 50;
             this.hScrollBar4.Name = "hScrollBar4";
@@ -2299,36 +2422,36 @@ namespace HecopUI_Test
             this.hScrollBar4.Size = new System.Drawing.Size(10, 200);
             this.hScrollBar4.TabIndex = 3;
             this.hScrollBar4.Text = "hScrollBar4";
-            this.hScrollBar4.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(142)))));
+            this.hScrollBar4.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(128)))), ((int)(((byte)(122)))));
             this.hScrollBar4.ThumbRadius = 0;
             // 
             // hScrollBar2
             // 
-            this.hScrollBar2.BarColor = System.Drawing.Color.LightGray;
+            this.hScrollBar2.BarColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.hScrollBar2.BarRadius = 0;
-            this.hScrollBar2.HoverThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(188)))), ((int)(((byte)(162)))));
+            this.hScrollBar2.HoverThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(148)))), ((int)(((byte)(142)))));
             this.hScrollBar2.Location = new System.Drawing.Point(152, 158);
             this.hScrollBar2.Name = "hScrollBar2";
             this.hScrollBar2.Orientation = System.Windows.Forms.ScrollOrientation.HorizontalScroll;
             this.hScrollBar2.Size = new System.Drawing.Size(200, 10);
             this.hScrollBar2.TabIndex = 2;
             this.hScrollBar2.Text = "hScrollBar2";
-            this.hScrollBar2.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(142)))));
+            this.hScrollBar2.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(128)))), ((int)(((byte)(122)))));
             this.hScrollBar2.ThumbRadius = 0;
             this.hScrollBar2.UseBarColor = true;
             // 
             // hScrollBar1
             // 
-            this.hScrollBar1.BarColor = System.Drawing.Color.LightGray;
+            this.hScrollBar1.BarColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.hScrollBar1.BarRadius = 0;
-            this.hScrollBar1.HoverThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(188)))), ((int)(((byte)(162)))));
+            this.hScrollBar1.HoverThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(148)))), ((int)(((byte)(142)))));
             this.hScrollBar1.Location = new System.Drawing.Point(87, 56);
             this.hScrollBar1.Name = "hScrollBar1";
             this.hScrollBar1.Orientation = System.Windows.Forms.ScrollOrientation.VerticalScroll;
             this.hScrollBar1.Size = new System.Drawing.Size(10, 200);
             this.hScrollBar1.TabIndex = 1;
             this.hScrollBar1.Text = "hScrollBar1";
-            this.hScrollBar1.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(142)))));
+            this.hScrollBar1.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(128)))), ((int)(((byte)(122)))));
             this.hScrollBar1.ThumbRadius = 0;
             // 
             // tabPage8
@@ -2349,7 +2472,7 @@ namespace HecopUI_Test
             this.hRadiusPanel1.BorderColor = System.Drawing.Color.DimGray;
             this.hRadiusPanel1.BorderThickness = 1F;
             this.hRadiusPanel1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            this.hRadiusPanel1.Location = new System.Drawing.Point(188, 57);
+            this.hRadiusPanel1.Location = new System.Drawing.Point(158, 55);
             this.hRadiusPanel1.Name = "hRadiusPanel1";
             this.hRadiusPanel1.PanelColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.hRadiusPanel1.PanelColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
@@ -2358,11 +2481,487 @@ namespace HecopUI_Test
             this.hRadiusPanel1.RoundBottomRight = true;
             this.hRadiusPanel1.RoundTopLeft = true;
             this.hRadiusPanel1.RoundTopRight = true;
-            this.hRadiusPanel1.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.hRadiusPanel1.ShadowPadding = new System.Windows.Forms.Padding(3, 2, 3, 4);
+            this.hRadiusPanel1.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.hRadiusPanel1.ShadowPadding = new System.Windows.Forms.Padding(5, 4, 5, 8);
             this.hRadiusPanel1.ShadowRadius = 5;
-            this.hRadiusPanel1.Size = new System.Drawing.Size(319, 303);
+            this.hRadiusPanel1.Size = new System.Drawing.Size(421, 396);
             this.hRadiusPanel1.TabIndex = 0;
+            // 
+            // tabPage9
+            // 
+            this.tabPage9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.tabPage9.Controls.Add(this.hTabControl3);
+            this.tabPage9.Controls.Add(this.hTabControl2);
+            this.tabPage9.Cursor = System.Windows.Forms.Cursors.Default;
+            this.tabPage9.Location = new System.Drawing.Point(139, 4);
+            this.tabPage9.Name = "tabPage9";
+            this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage9.Size = new System.Drawing.Size(757, 546);
+            this.tabPage9.TabIndex = 8;
+            this.tabPage9.Text = "Tab Control";
+            // 
+            // hTabControl3
+            // 
+            this.hTabControl3.ApplyTabPagesColor = true;
+            this.hTabControl3.BackgroundColor = System.Drawing.Color.Transparent;
+            this.hTabControl3.BorderTabColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(142)))));
+            this.hTabControl3.BorderThickness = 1;
+            this.hTabControl3.Controls.Add(this.tabPage12);
+            this.hTabControl3.Controls.Add(this.tabPage13);
+            this.hTabControl3.CursorTabPages = System.Windows.Forms.Cursors.Default;
+            this.hTabControl3.Location = new System.Drawing.Point(381, 45);
+            this.hTabControl3.Name = "hTabControl3";
+            this.hTabControl3.SelectedIndex = 0;
+            this.hTabControl3.SelectedTabColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(142)))));
+            this.hTabControl3.SelectedTextColor = System.Drawing.Color.White;
+            this.hTabControl3.Size = new System.Drawing.Size(340, 444);
+            this.hTabControl3.TabIndex = 1;
+            this.hTabControl3.TabsColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.hTabControl3.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.hTabControl3.TextPadding = new System.Windows.Forms.Padding(0);
+            this.hTabControl3.TextRenderHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.hTabControl3.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.hTabControl3.TextTrim = System.Drawing.StringTrimming.EllipsisCharacter;
+            this.hTabControl3.UnSelectedBorderTabColor = System.Drawing.Color.Silver;
+            this.hTabControl3.UnSelectedTabColor = System.Drawing.Color.Transparent;
+            this.hTabControl3.UnselectedTextColor = System.Drawing.Color.Silver;
+            this.hTabControl3.UseAnimation = false;
+            // 
+            // tabPage12
+            // 
+            this.tabPage12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.tabPage12.Cursor = System.Windows.Forms.Cursors.Default;
+            this.tabPage12.Location = new System.Drawing.Point(4, 25);
+            this.tabPage12.Name = "tabPage12";
+            this.tabPage12.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage12.Size = new System.Drawing.Size(332, 415);
+            this.tabPage12.TabIndex = 0;
+            this.tabPage12.Text = "Tab 1";
+            // 
+            // tabPage13
+            // 
+            this.tabPage13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.tabPage13.Cursor = System.Windows.Forms.Cursors.Default;
+            this.tabPage13.Location = new System.Drawing.Point(4, 25);
+            this.tabPage13.Name = "tabPage13";
+            this.tabPage13.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage13.Size = new System.Drawing.Size(332, 415);
+            this.tabPage13.TabIndex = 1;
+            this.tabPage13.Text = "Tab 2";
+            // 
+            // hTabControl2
+            // 
+            this.hTabControl2.ApplyTabPagesColor = true;
+            this.hTabControl2.BackgroundColor = System.Drawing.Color.Transparent;
+            this.hTabControl2.BorderTabColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(142)))));
+            this.hTabControl2.BorderThickness = 1;
+            this.hTabControl2.Controls.Add(this.tabPage10);
+            this.hTabControl2.Controls.Add(this.tabPage11);
+            this.hTabControl2.CursorTabPages = System.Windows.Forms.Cursors.Default;
+            this.hTabControl2.Location = new System.Drawing.Point(22, 45);
+            this.hTabControl2.Name = "hTabControl2";
+            this.hTabControl2.SelectedIndex = 0;
+            this.hTabControl2.SelectedTabColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(142)))));
+            this.hTabControl2.SelectedTextColor = System.Drawing.Color.White;
+            this.hTabControl2.Size = new System.Drawing.Size(340, 444);
+            this.hTabControl2.TabIndex = 0;
+            this.hTabControl2.TabsColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.hTabControl2.TabStyle = HecopUI_Winforms.Enums.TabStyle.Style2;
+            this.hTabControl2.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.hTabControl2.TextPadding = new System.Windows.Forms.Padding(0);
+            this.hTabControl2.TextRenderHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.hTabControl2.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.hTabControl2.TextTrim = System.Drawing.StringTrimming.EllipsisCharacter;
+            this.hTabControl2.UnSelectedBorderTabColor = System.Drawing.Color.Silver;
+            this.hTabControl2.UnSelectedTabColor = System.Drawing.Color.Transparent;
+            this.hTabControl2.UnselectedTextColor = System.Drawing.Color.Silver;
+            this.hTabControl2.UseAnimation = false;
+            // 
+            // tabPage10
+            // 
+            this.tabPage10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.tabPage10.Cursor = System.Windows.Forms.Cursors.Default;
+            this.tabPage10.Location = new System.Drawing.Point(4, 25);
+            this.tabPage10.Name = "tabPage10";
+            this.tabPage10.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage10.Size = new System.Drawing.Size(332, 415);
+            this.tabPage10.TabIndex = 0;
+            this.tabPage10.Text = "Tab 1";
+            // 
+            // tabPage11
+            // 
+            this.tabPage11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.tabPage11.Cursor = System.Windows.Forms.Cursors.Default;
+            this.tabPage11.Location = new System.Drawing.Point(4, 25);
+            this.tabPage11.Name = "tabPage11";
+            this.tabPage11.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage11.Size = new System.Drawing.Size(332, 415);
+            this.tabPage11.TabIndex = 1;
+            this.tabPage11.Text = "Tab 2";
+            // 
+            // tabPage14
+            // 
+            this.tabPage14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.tabPage14.Controls.Add(this.hTabControl4);
+            this.tabPage14.Cursor = System.Windows.Forms.Cursors.Default;
+            this.tabPage14.Location = new System.Drawing.Point(139, 4);
+            this.tabPage14.Name = "tabPage14";
+            this.tabPage14.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage14.Size = new System.Drawing.Size(757, 546);
+            this.tabPage14.TabIndex = 9;
+            this.tabPage14.Text = "Charts";
+            // 
+            // hTabControl4
+            // 
+            this.hTabControl4.ApplyTabPagesColor = true;
+            this.hTabControl4.BackgroundColor = System.Drawing.Color.Transparent;
+            this.hTabControl4.BorderTabColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(148)))), ((int)(((byte)(122)))));
+            this.hTabControl4.BorderThickness = 1;
+            this.hTabControl4.Controls.Add(this.tabPage15);
+            this.hTabControl4.Controls.Add(this.tabPage16);
+            this.hTabControl4.Controls.Add(this.tabPage17);
+            this.hTabControl4.Controls.Add(this.tabPage18);
+            this.hTabControl4.CursorTabPages = System.Windows.Forms.Cursors.Default;
+            this.hTabControl4.Location = new System.Drawing.Point(34, 31);
+            this.hTabControl4.Multiline = true;
+            this.hTabControl4.Name = "hTabControl4";
+            this.hTabControl4.SelectedIndex = 0;
+            this.hTabControl4.SelectedTabColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(148)))), ((int)(((byte)(122)))));
+            this.hTabControl4.SelectedTextColor = System.Drawing.Color.White;
+            this.hTabControl4.Size = new System.Drawing.Size(684, 464);
+            this.hTabControl4.TabIndex = 1;
+            this.hTabControl4.TabsColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.hTabControl4.TabStyle = HecopUI_Winforms.Enums.TabStyle.Style2;
+            this.hTabControl4.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.hTabControl4.TextPadding = new System.Windows.Forms.Padding(0);
+            this.hTabControl4.TextRenderHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.hTabControl4.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.hTabControl4.TextTrim = System.Drawing.StringTrimming.EllipsisCharacter;
+            this.hTabControl4.UnSelectedBorderTabColor = System.Drawing.Color.Silver;
+            this.hTabControl4.UnSelectedTabColor = System.Drawing.Color.Transparent;
+            this.hTabControl4.UnselectedTextColor = System.Drawing.Color.Silver;
+            this.hTabControl4.UseAnimation = false;
+            // 
+            // tabPage15
+            // 
+            this.tabPage15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.tabPage15.Controls.Add(this.hBarChart1);
+            this.tabPage15.Cursor = System.Windows.Forms.Cursors.Default;
+            this.tabPage15.Location = new System.Drawing.Point(4, 25);
+            this.tabPage15.Name = "tabPage15";
+            this.tabPage15.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage15.Size = new System.Drawing.Size(676, 435);
+            this.tabPage15.TabIndex = 0;
+            this.tabPage15.Text = "Bar";
+            // 
+            // hBarChart1
+            // 
+            this.hBarChart1.BorderItems = true;
+            this.hBarChart1.ItemsTextColor = System.Drawing.Color.DarkGray;
+            this.hBarChart1.LegendColor = System.Drawing.Color.DarkGray;
+            this.hBarChart1.LegendFont = new System.Drawing.Font("Arial", 10F);
+            this.hBarChart1.LegendType = HecopUI_Winforms.Enums.LegendType.Right;
+            this.hBarChart1.LineChart = System.Drawing.Color.Gray;
+            this.hBarChart1.Location = new System.Drawing.Point(32, 33);
+            this.hBarChart1.Name = "hBarChart1";
+            this.hBarChart1.NumbericChartColor = System.Drawing.Color.DarkGray;
+            this.hBarChart1.ShowTitle = true;
+            this.hBarChart1.Size = new System.Drawing.Size(599, 371);
+            this.hBarChart1.SortMode = HecopUI_Winforms.Enums.SortMode.None;
+            this.hBarChart1.SpaceBetweenItems = 10;
+            this.hBarChart1.TabIndex = 0;
+            this.hBarChart1.Text = "hBarChart1";
+            this.hBarChart1.TitleChartAlign = HecopUI_Winforms.Enums.TitleChartAlign.TopLeft;
+            this.hBarChart1.TitleColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(148)))), ((int)(((byte)(122)))));
+            this.hBarChart1.TitleFont = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.hBarChart1.TitleText = "HBar Chart";
+            this.hBarChart1.ToolTipFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hBarChart1.VisibleNumberOy = 10;
+            // 
+            // tabPage16
+            // 
+            this.tabPage16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.tabPage16.Controls.Add(this.hLineAreaChart1);
+            this.tabPage16.Cursor = System.Windows.Forms.Cursors.Default;
+            this.tabPage16.Location = new System.Drawing.Point(4, 25);
+            this.tabPage16.Name = "tabPage16";
+            this.tabPage16.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage16.Size = new System.Drawing.Size(676, 435);
+            this.tabPage16.TabIndex = 1;
+            this.tabPage16.Text = "Line";
+            // 
+            // hLineAreaChart1
+            // 
+            this.hLineAreaChart1.ChartColor = System.Drawing.Color.Gray;
+            this.hLineAreaChart1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(148)))), ((int)(((byte)(122)))));
+            this.hLineAreaChart1.GraphStyle = HecopUI_Winforms.Controls.Charts.HLineAreaChart.Style.Flat;
+            this.hLineAreaChart1.GridColor = System.Drawing.Color.DimGray;
+            this.hLineAreaChart1.Location = new System.Drawing.Point(32, 33);
+            this.hLineAreaChart1.Name = "hLineAreaChart1";
+            this.hLineAreaChart1.NumbericOfOxy = System.Drawing.Color.DarkGray;
+            this.hLineAreaChart1.NumberOfOyVisible = 10;
+            this.hLineAreaChart1.PointSize = 8;
+            this.hLineAreaChart1.ShowAreas = true;
+            this.hLineAreaChart1.ShowPoints = true;
+            this.hLineAreaChart1.Size = new System.Drawing.Size(599, 371);
+            this.hLineAreaChart1.SortMode = HecopUI_Winforms.Enums.SortMode.None;
+            this.hLineAreaChart1.TabIndex = 0;
+            this.hLineAreaChart1.Text = "hLineAreaChart1";
+            this.hLineAreaChart1.TitleAlign = HecopUI_Winforms.Enums.TitleChartAlign.TopLeft;
+            this.hLineAreaChart1.TitleFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            // 
+            // tabPage17
+            // 
+            this.tabPage17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.tabPage17.Controls.Add(this.hPieChart1);
+            this.tabPage17.Cursor = System.Windows.Forms.Cursors.Default;
+            this.tabPage17.Location = new System.Drawing.Point(4, 25);
+            this.tabPage17.Name = "tabPage17";
+            this.tabPage17.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage17.Size = new System.Drawing.Size(676, 435);
+            this.tabPage17.TabIndex = 2;
+            this.tabPage17.Text = "Pie";
+            // 
+            // hPieChart1
+            // 
+            this.hPieChart1.CircularColor = System.Drawing.Color.Salmon;
+            this.hPieChart1.CircularWidth = 0;
+            this.hPieChart1.LegendChart = HecopUI_Winforms.Enums.LegendType.Right;
+            this.hPieChart1.LegendFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hPieChart1.LegendTextColor = System.Drawing.Color.DarkGray;
+            this.hPieChart1.Location = new System.Drawing.Point(32, 33);
+            this.hPieChart1.Name = "hPieChart1";
+            this.hPieChart1.PieCharSize = 200;
+            this.hPieChart1.SeriesValueFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hPieChart1.ShowValuesTip = true;
+            this.hPieChart1.Size = new System.Drawing.Size(599, 371);
+            this.hPieChart1.StartAngle = 0;
+            this.hPieChart1.TabIndex = 0;
+            this.hPieChart1.Text = "hPieChart1";
+            this.hPieChart1.TextRenderHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.hPieChart1.ValueColor = System.Drawing.Color.White;
+            this.hPieChart1.VisibleLegend = true;
+            // 
+            // tabPage18
+            // 
+            this.tabPage18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.tabPage18.Controls.Add(this.hRadarChart1);
+            this.tabPage18.Cursor = System.Windows.Forms.Cursors.Default;
+            this.tabPage18.Location = new System.Drawing.Point(4, 25);
+            this.tabPage18.Name = "tabPage18";
+            this.tabPage18.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage18.Size = new System.Drawing.Size(676, 435);
+            this.tabPage18.TabIndex = 3;
+            this.tabPage18.Text = "Radar";
+            // 
+            // hRadarChart1
+            // 
+            this.hRadarChart1.LegendColor = System.Drawing.Color.DarkGray;
+            this.hRadarChart1.LegendFont = new System.Drawing.Font("Segoe UI", 10F);
+            this.hRadarChart1.LegendType = HecopUI_Winforms.Enums.LegendType.Right;
+            this.hRadarChart1.Location = new System.Drawing.Point(32, 33);
+            this.hRadarChart1.MaxValue = 100;
+            this.hRadarChart1.Name = "hRadarChart1";
+            this.hRadarChart1.NumberVisible = true;
+            this.hRadarChart1.PointSize = 8;
+            this.hRadarChart1.RadarColor = System.Drawing.Color.Gray;
+            series1.Color = System.Drawing.Color.OrangeRed;
+            series1.Text = "serieName1";
+            series1.Values = new float[] {
+        90F,
+        50F,
+        70F,
+        40F,
+        60F};
+            this.hRadarChart1.Series = new HecopUI_Winforms.Controls.Charts.Series[] {
+        series1};
+            this.hRadarChart1.ShowTitle = true;
+            this.hRadarChart1.ShowValuesTip = false;
+            this.hRadarChart1.Size = new System.Drawing.Size(599, 371);
+            this.hRadarChart1.Step = 20;
+            this.hRadarChart1.TabIndex = 0;
+            this.hRadarChart1.Text = "hRadarChart1";
+            this.hRadarChart1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            this.hRadarChart1.Title = "Radar Chart";
+            this.hRadarChart1.TitleChartAlign = HecopUI_Winforms.Enums.TitleChartAlign.TopLeft;
+            this.hRadarChart1.TitleColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(148)))), ((int)(((byte)(122)))));
+            this.hRadarChart1.TitleFont = new System.Drawing.Font("Segoe UI", 12F);
+            // 
+            // tabPage6
+            // 
+            this.tabPage6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.tabPage6.Controls.Add(this.hSolidGauge1);
+            this.tabPage6.Controls.Add(this.hDigitalGauge1);
+            this.tabPage6.Cursor = System.Windows.Forms.Cursors.Default;
+            this.tabPage6.Location = new System.Drawing.Point(139, 4);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(757, 546);
+            this.tabPage6.TabIndex = 10;
+            this.tabPage6.Text = "Gauge";
+            // 
+            // hSolidGauge1
+            // 
+            this.hSolidGauge1.BackColor = System.Drawing.Color.Transparent;
+            this.hSolidGauge1.BaseGauge = System.Drawing.Color.Gainsboro;
+            this.hSolidGauge1.CircularDiskColor = System.Drawing.Color.DimGray;
+            this.hSolidGauge1.CircularDiskSizeType = HecopUI_Winforms.Controls.HSolidGauge.DiskSizeMode.Auto;
+            this.hSolidGauge1.CircularSize = 20;
+            this.hSolidGauge1.GaugeColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(142)))));
+            this.hSolidGauge1.GaugeColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(142)))));
+            this.hSolidGauge1.GaugeMode = HecopUI_Winforms.Controls.HSolidGauge.GaugeType.Gradient;
+            this.hSolidGauge1.GaugeTextType = HecopUI_Winforms.Controls.HSolidGauge.TextType.Percentage;
+            this.hSolidGauge1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.hSolidGauge1.Interval = 10;
+            this.hSolidGauge1.Location = new System.Drawing.Point(257, 230);
+            this.hSolidGauge1.MaximumValue = 100;
+            this.hSolidGauge1.Name = "hSolidGauge1";
+            this.hSolidGauge1.NeedleColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(142)))));
+            this.hSolidGauge1.NeedleHeight = HecopUI_Winforms.Controls.HSolidGauge.NeedleLongType.Auto;
+            this.hSolidGauge1.NeedleLong = 50;
+            this.hSolidGauge1.NeedleThickness = 2;
+            this.hSolidGauge1.NeedleType = System.Drawing.Drawing2D.LineCap.Flat;
+            this.hSolidGauge1.NumberOfOYVissible = 10;
+            this.hSolidGauge1.ShapeType = System.Drawing.Drawing2D.LineCap.Round;
+            this.hSolidGauge1.ShowMajor = true;
+            this.hSolidGauge1.Size = new System.Drawing.Size(158, 158);
+            this.hSolidGauge1.SolidGaugeWidth = 12;
+            this.hSolidGauge1.TabIndex = 1;
+            this.hSolidGauge1.Text = "hSolidGauge1";
+            this.hSolidGauge1.TextRenderHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.hSolidGauge1.UseAnimation = false;
+            this.hSolidGauge1.Value = 0;
+            this.hSolidGauge1.ValueTextColor = System.Drawing.Color.White;
+            // 
+            // hDigitalGauge1
+            // 
+            this.hDigitalGauge1.BackColor = System.Drawing.Color.Transparent;
+            this.hDigitalGauge1.BorderColor = System.Drawing.Color.DarkGray;
+            this.hDigitalGauge1.BorderThickness = 5;
+            this.hDigitalGauge1.GaugeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.hDigitalGauge1.Location = new System.Drawing.Point(167, 80);
+            this.hDigitalGauge1.MaximumValue = 1000;
+            this.hDigitalGauge1.MinimumValue = 0;
+            this.hDigitalGauge1.Name = "hDigitalGauge1";
+            this.hDigitalGauge1.NumberBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(30)))), ((int)(((byte)(148)))), ((int)(((byte)(128)))));
+            this.hDigitalGauge1.NumberColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(148)))), ((int)(((byte)(128)))));
+            this.hDigitalGauge1.NumberHeight = 50F;
+            this.hDigitalGauge1.Radius = 20;
+            this.hDigitalGauge1.Size = new System.Drawing.Size(347, 118);
+            this.hDigitalGauge1.TabIndex = 0;
+            this.hDigitalGauge1.Text = "hDigitalGauge1";
+            this.hDigitalGauge1.Value = 0;
+            // 
+            // tabPage19
+            // 
+            this.tabPage19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.tabPage19.Controls.Add(this.hClockDigital1);
+            this.tabPage19.Controls.Add(this.hClockCircular1);
+            this.tabPage19.Cursor = System.Windows.Forms.Cursors.Default;
+            this.tabPage19.Location = new System.Drawing.Point(139, 4);
+            this.tabPage19.Name = "tabPage19";
+            this.tabPage19.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage19.Size = new System.Drawing.Size(757, 546);
+            this.tabPage19.TabIndex = 11;
+            this.tabPage19.Text = "Clock";
+            // 
+            // hClockDigital1
+            // 
+            this.hClockDigital1.BackColor = System.Drawing.Color.Transparent;
+            this.hClockDigital1.Font = new System.Drawing.Font("Segoe UI", 25F);
+            this.hClockDigital1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(148)))), ((int)(((byte)(128)))));
+            this.hClockDigital1.Interval = 1000;
+            this.hClockDigital1.Location = new System.Drawing.Point(235, 256);
+            this.hClockDigital1.Name = "hClockDigital1";
+            this.hClockDigital1.ShowMillisecond = false;
+            this.hClockDigital1.Size = new System.Drawing.Size(263, 107);
+            this.hClockDigital1.TabIndex = 1;
+            this.hClockDigital1.Text = "hClockDigital1";
+            this.hClockDigital1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            // 
+            // hClockCircular1
+            // 
+            this.hClockCircular1.Draw1MinuteTicks = true;
+            this.hClockCircular1.Draw5MinuteTicks = true;
+            this.hClockCircular1.HourHandColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(148)))));
+            this.hClockCircular1.Interval = 1000;
+            this.hClockCircular1.Location = new System.Drawing.Point(263, 57);
+            this.hClockCircular1.MinuteHandColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(86)))), ((int)(((byte)(189)))));
+            this.hClockCircular1.Name = "hClockCircular1";
+            this.hClockCircular1.SecondHandColor = System.Drawing.Color.RoyalBlue;
+            this.hClockCircular1.Size = new System.Drawing.Size(193, 193);
+            this.hClockCircular1.TabIndex = 0;
+            this.hClockCircular1.TicksColor = System.Drawing.Color.Gray;
+            // 
+            // tabPage20
+            // 
+            this.tabPage20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.tabPage20.Controls.Add(this.hCircleAnglePicker1);
+            this.tabPage20.Cursor = System.Windows.Forms.Cursors.Default;
+            this.tabPage20.Location = new System.Drawing.Point(139, 4);
+            this.tabPage20.Name = "tabPage20";
+            this.tabPage20.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage20.Size = new System.Drawing.Size(757, 546);
+            this.tabPage20.TabIndex = 12;
+            this.tabPage20.Text = "Pickers";
+            // 
+            // hCircleAnglePicker1
+            // 
+            this.hCircleAnglePicker1.AutoScroll = false;
+            this.hCircleAnglePicker1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.hCircleAnglePicker1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.hCircleAnglePicker1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.hCircleAnglePicker1.InnerCircle = true;
+            this.hCircleAnglePicker1.InnerCircleStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
+            this.hCircleAnglePicker1.LineCap = System.Drawing.Drawing2D.LineCap.Square;
+            this.hCircleAnglePicker1.LineStyle = System.Drawing.Drawing2D.DashStyle.Dash;
+            this.hCircleAnglePicker1.Location = new System.Drawing.Point(194, 115);
+            this.hCircleAnglePicker1.Name = "hCircleAnglePicker1";
+            this.hCircleAnglePicker1.Shading = true;
+            this.hCircleAnglePicker1.Size = new System.Drawing.Size(300, 249);
+            this.hCircleAnglePicker1.TabIndex = 3;
+            this.hCircleAnglePicker1.Text = "hCircleAnglePicker1";
+            // 
+            // hTextBox2
+            // 
+            this.hTextBox2.AcceptsReturn = true;
+            this.hTextBox2.AcceptsTab = true;
+            this.hTextBox2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.hTextBox2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.hTextBox2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(142)))));
+            this.hTextBox2.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(148)))), ((int)(((byte)(122)))));
+            this.hTextBox2.BorderHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(188)))), ((int)(((byte)(162)))));
+            this.hTextBox2.BorderThickness = 1;
+            this.hTextBox2.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.hTextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.hTextBox2.Image = ((System.Drawing.Image)(resources.GetObject("hTextBox2.Image")));
+            this.hTextBox2.ImageOffsetX = 2;
+            this.hTextBox2.ImageSize = new System.Drawing.Size(20, 20);
+            this.hTextBox2.Location = new System.Drawing.Point(307, 53);
+            this.hTextBox2.MaxLength = 32767;
+            this.hTextBox2.Multiline = false;
+            this.hTextBox2.Name = "hTextBox2";
+            this.hTextBox2.Radius = 0;
+            this.hTextBox2.ReadOnly = false;
+            this.hTextBox2.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.hTextBox2.ShortcutsEnabled = false;
+            this.hTextBox2.ShowBottomBorder = true;
+            this.hTextBox2.ShowTopBorder = true;
+            this.hTextBox2.Size = new System.Drawing.Size(198, 38);
+            this.hTextBox2.Style = HecopUI_Winforms.Controls.HTextBox.TextBoxStyle.Style2;
+            this.hTextBox2.TabIndex = 2;
+            this.hTextBox2.TexOffsetX = 2;
+            this.hTextBox2.Text = "hTextBox2";
+            this.hTextBox2.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.hTextBox2.TextBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.hTextBox2.TextBoxHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.hTextBox2.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.hTextBox2.UseAnimation = false;
+            this.hTextBox2.UseSystemPasswordChar = false;
+            this.hTextBox2.WatermarkColor = System.Drawing.Color.Gray;
+            this.hTextBox2.WatermarkFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hTextBox2.WatermarkRendering = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.hTextBox2.WatermarkText = "Enter watermark";
             // 
             // Form1
             // 
@@ -2397,10 +2996,23 @@ namespace HecopUI_Test
             this.tabPage1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
+            this.tabPage21.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.tabPage7.ResumeLayout(false);
             this.tabPage8.ResumeLayout(false);
+            this.tabPage9.ResumeLayout(false);
+            this.hTabControl3.ResumeLayout(false);
+            this.hTabControl2.ResumeLayout(false);
+            this.tabPage14.ResumeLayout(false);
+            this.hTabControl4.ResumeLayout(false);
+            this.tabPage15.ResumeLayout(false);
+            this.tabPage16.ResumeLayout(false);
+            this.tabPage17.ResumeLayout(false);
+            this.tabPage18.ResumeLayout(false);
+            this.tabPage6.ResumeLayout(false);
+            this.tabPage19.ResumeLayout(false);
+            this.tabPage20.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -2437,7 +3049,6 @@ namespace HecopUI_Test
         private HecopUI_Winforms.Controls.HButton hButton1;
         private HecopUI_Winforms.Controls.HButton hButton2;
         private HecopUI_Winforms.Controls.HButton hButton3;
-        private System.Windows.Forms.TabPage tabPage6;
         private HecopUI_Winforms.Controls.HButton hButton4;
         private HecopUI_Winforms.Controls.HButton hButton5;
         private HecopUI_Winforms.Controls.HButton hButton6;
@@ -2497,6 +3108,35 @@ namespace HecopUI_Test
         private HecopUI_Winforms.Controls.HProgressBar hProgressBar6;
         private System.Windows.Forms.TabPage tabPage8;
         private HecopUI_Winforms.Controls.HRadiusPanel hRadiusPanel1;
+        private TabPage tabPage9;
+        private HecopUI_Winforms.Controls.HTabControl hTabControl2;
+        private TabPage tabPage10;
+        private TabPage tabPage11;
+        private HecopUI_Winforms.Controls.HTabControl hTabControl3;
+        private TabPage tabPage12;
+        private TabPage tabPage13;
+        private TabPage tabPage14;
+        private HecopUI_Winforms.Controls.HTabControl hTabControl4;
+        private TabPage tabPage15;
+        private TabPage tabPage16;
+        private HecopUI_Winforms.Controls.Charts.HBarChart hBarChart1;
+        private HecopUI_Winforms.Controls.Charts.HLineAreaChart hLineAreaChart1;
+        private TabPage tabPage17;
+        private HecopUI_Winforms.Controls.Charts.HPieChart hPieChart1;
+        private TabPage tabPage18;
+        private HecopUI_Winforms.Controls.Charts.HRadarChart hRadarChart1;
+        private TabPage tabPage6;
+        private HecopUI_Winforms.Controls.HSolidGauge hSolidGauge1;
+        private HecopUI_Winforms.Controls.HDigitalGauge hDigitalGauge1;
+        private TabPage tabPage19;
+        private HecopUI_Winforms.Controls.HClockDigital hClockDigital1;
+        private HecopUI_Winforms.Controls.HClockCircular hClockCircular1;
+        private TabPage tabPage20;
+        private HecopUI_Winforms.Controls.HCircleAnglePicker hCircleAnglePicker1;
+        private TabPage tabPage21;
+        private HecopUI_Winforms.Controls.HTextBox hTextBox1;
+        private HecopUI_Winforms.Controls.HRichTextBox hRichTextBox1;
+        private HecopUI_Winforms.Controls.HTextBox hTextBox2;
     }
 }
 

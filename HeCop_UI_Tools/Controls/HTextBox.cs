@@ -700,7 +700,7 @@ namespace HecopUI_Winforms.Controls
         {
             if (_Image != null)
             {
-                g.DrawImage(_Image, 2 + imageX + Radius / 2 + BorderThickness, (Height / 2 - ImageSize.Height / 2)
+                g.DrawImage(_Image, 2 + imageX + Radius / 2 + BorderThickness, (Height / 2 - ImageSize.Height / 2) - (Style== TextBoxStyle.Style2? BorderThickness:0)
                    , ImageSize.Width, ImageSize.Height);
             }
         }
@@ -826,7 +826,7 @@ namespace HecopUI_Winforms.Controls
             g.FillPath(new SolidBrush(butHover ? textBoxHoverColor : textBoxColor), Gp);
 
             //DrawWatermark();
-            DrawImage(g);
+           
             double fade = (UseAnimation ? 255 * _animationManager.GetProgress() : (Focused || butHover || !_animationManager.IsAnimating() ? 255 * 1 : 0));
 
             Pen pen = new Pen(new SolidBrush(tbCtrl.Focused ? DrawHelper.BlendColor(BorderHoverColor, borderFocusColor, fade) : butHover ? DrawHelper.BlendColor(BorderColor, BorderHoverColor, fade) : DrawHelper.BlendColor(BorderColor, BorderHoverColor, fade)), borderThickness)
@@ -859,6 +859,7 @@ namespace HecopUI_Winforms.Controls
                     break;
 
             }
+            DrawImage(g);
 
         }
     }

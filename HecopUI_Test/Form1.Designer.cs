@@ -34,6 +34,20 @@ namespace HecopUI_Test
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             HecopUI_Winforms.Controls.Charts.Series series1 = new HecopUI_Winforms.Controls.Charts.Series();
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("Item 1");
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("Item 2");
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Item 1",
+            "Subitem 1",
+            "Subitem 2"}, -1);
+            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Item 2",
+            "Subitem 1",
+            "Subitem 2"}, -1);
+            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Ittem 3",
+            "dsa",
+            "2sa"}, -1);
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.colorDialog2 = new System.Windows.Forms.ColorDialog();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
@@ -81,6 +95,8 @@ namespace HecopUI_Test
             this.hButton1 = new HecopUI_Winforms.Controls.HButton();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage21 = new System.Windows.Forms.TabPage();
+            this.hRichTextBox2 = new HecopUI_Winforms.Controls.HRichTextBox();
+            this.hTextBox2 = new HecopUI_Winforms.Controls.HTextBox();
             this.hTextBox1 = new HecopUI_Winforms.Controls.HTextBox();
             this.hRichTextBox1 = new HecopUI_Winforms.Controls.HRichTextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
@@ -144,8 +160,18 @@ namespace HecopUI_Test
             this.hClockDigital1 = new HecopUI_Winforms.Controls.HClockDigital();
             this.hClockCircular1 = new HecopUI_Winforms.Controls.HClockCircular();
             this.tabPage20 = new System.Windows.Forms.TabPage();
+            this.hTextBox3 = new HecopUI_Winforms.Controls.HTextBox();
             this.hCircleAnglePicker1 = new HecopUI_Winforms.Controls.HCircleAnglePicker();
-            this.hTextBox2 = new HecopUI_Winforms.Controls.HTextBox();
+            this.tabPage22 = new System.Windows.Forms.TabPage();
+            this.hListView2 = new HecopUI_Winforms.Controls.HListView();
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.hListView1 = new HecopUI_Winforms.Controls.HListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.tabPage23 = new System.Windows.Forms.TabPage();
             this.hTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -167,6 +193,7 @@ namespace HecopUI_Test
             this.tabPage6.SuspendLayout();
             this.tabPage19.SuspendLayout();
             this.tabPage20.SuspendLayout();
+            this.tabPage22.SuspendLayout();
             this.SuspendLayout();
             // 
             // hTabControl1
@@ -189,6 +216,8 @@ namespace HecopUI_Test
             this.hTabControl1.Controls.Add(this.tabPage6);
             this.hTabControl1.Controls.Add(this.tabPage19);
             this.hTabControl1.Controls.Add(this.tabPage20);
+            this.hTabControl1.Controls.Add(this.tabPage22);
+            this.hTabControl1.Controls.Add(this.tabPage23);
             this.hTabControl1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.hTabControl1.CursorTabPages = System.Windows.Forms.Cursors.Default;
             this.hTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1657,6 +1686,7 @@ namespace HecopUI_Test
             // tabPage21
             // 
             this.tabPage21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.tabPage21.Controls.Add(this.hRichTextBox2);
             this.tabPage21.Controls.Add(this.hTextBox2);
             this.tabPage21.Controls.Add(this.hTextBox1);
             this.tabPage21.Controls.Add(this.hRichTextBox1);
@@ -1667,6 +1697,80 @@ namespace HecopUI_Test
             this.tabPage21.Size = new System.Drawing.Size(757, 546);
             this.tabPage21.TabIndex = 13;
             this.tabPage21.Text = "Text";
+            // 
+            // hRichTextBox2
+            // 
+            this.hRichTextBox2.AcceptsTab = false;
+            this.hRichTextBox2.AutoWordSelection = false;
+            this.hRichTextBox2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(142)))));
+            this.hRichTextBox2.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(142)))));
+            this.hRichTextBox2.BorderHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(188)))), ((int)(((byte)(162)))));
+            this.hRichTextBox2.BorderThickness = 1;
+            this.hRichTextBox2.BulletIndent = 0;
+            this.hRichTextBox2.DetectUrls = true;
+            this.hRichTextBox2.EnableAutoDragDrop = false;
+            this.hRichTextBox2.HideSelection = false;
+            this.hRichTextBox2.Lines = new string[] {
+        "hRichTextBox2"};
+            this.hRichTextBox2.Location = new System.Drawing.Point(354, 157);
+            this.hRichTextBox2.MaxLength = 2147483647;
+            this.hRichTextBox2.MultiLine = true;
+            this.hRichTextBox2.Name = "hRichTextBox2";
+            this.hRichTextBox2.Radius = 1;
+            this.hRichTextBox2.ReadOnly = false;
+            this.hRichTextBox2.RichTextBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.hRichTextBox2.RichTextBoxHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.hRichTextBox2.RichTextBoxScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Both;
+            this.hRichTextBox2.SelectionRightIndent = 0;
+            this.hRichTextBox2.ShorcutEnabled = false;
+            this.hRichTextBox2.ShowSelectionMargin = false;
+            this.hRichTextBox2.Size = new System.Drawing.Size(250, 268);
+            this.hRichTextBox2.TabIndex = 3;
+            this.hRichTextBox2.Text = "hRichTextBox2";
+            this.hRichTextBox2.TextColor = System.Drawing.Color.Silver;
+            this.hRichTextBox2.TextRenderHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.hRichTextBox2.WordWrap = true;
+            // 
+            // hTextBox2
+            // 
+            this.hTextBox2.AcceptsReturn = true;
+            this.hTextBox2.AcceptsTab = true;
+            this.hTextBox2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.hTextBox2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.hTextBox2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(142)))));
+            this.hTextBox2.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(148)))), ((int)(((byte)(122)))));
+            this.hTextBox2.BorderHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(188)))), ((int)(((byte)(162)))));
+            this.hTextBox2.BorderThickness = 1;
+            this.hTextBox2.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.hTextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.hTextBox2.Image = ((System.Drawing.Image)(resources.GetObject("hTextBox2.Image")));
+            this.hTextBox2.ImageOffsetX = 2;
+            this.hTextBox2.ImageSize = new System.Drawing.Size(20, 20);
+            this.hTextBox2.Location = new System.Drawing.Point(354, 53);
+            this.hTextBox2.MaxLength = 32767;
+            this.hTextBox2.Multiline = false;
+            this.hTextBox2.Name = "hTextBox2";
+            this.hTextBox2.Radius = 0;
+            this.hTextBox2.ReadOnly = false;
+            this.hTextBox2.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.hTextBox2.ShortcutsEnabled = false;
+            this.hTextBox2.ShowBottomBorder = true;
+            this.hTextBox2.ShowTopBorder = true;
+            this.hTextBox2.Size = new System.Drawing.Size(250, 38);
+            this.hTextBox2.Style = HecopUI_Winforms.Controls.HTextBox.TextBoxStyle.Style2;
+            this.hTextBox2.TabIndex = 2;
+            this.hTextBox2.TexOffsetX = 2;
+            this.hTextBox2.Text = "hTextBox2";
+            this.hTextBox2.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.hTextBox2.TextBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.hTextBox2.TextBoxHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.hTextBox2.TextColor = System.Drawing.Color.Silver;
+            this.hTextBox2.UseAnimation = false;
+            this.hTextBox2.UseSystemPasswordChar = false;
+            this.hTextBox2.WatermarkColor = System.Drawing.Color.DarkGray;
+            this.hTextBox2.WatermarkFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hTextBox2.WatermarkRendering = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.hTextBox2.WatermarkText = "Enter watermark";
             // 
             // hTextBox1
             // 
@@ -1693,7 +1797,7 @@ namespace HecopUI_Test
             this.hTextBox1.ShortcutsEnabled = false;
             this.hTextBox1.ShowBottomBorder = true;
             this.hTextBox1.ShowTopBorder = true;
-            this.hTextBox1.Size = new System.Drawing.Size(198, 38);
+            this.hTextBox1.Size = new System.Drawing.Size(250, 38);
             this.hTextBox1.Style = HecopUI_Winforms.Controls.HTextBox.TextBoxStyle.Style1;
             this.hTextBox1.TabIndex = 1;
             this.hTextBox1.TexOffsetX = 2;
@@ -1701,10 +1805,10 @@ namespace HecopUI_Test
             this.hTextBox1.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.hTextBox1.TextBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.hTextBox1.TextBoxHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.hTextBox1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.hTextBox1.TextColor = System.Drawing.Color.Silver;
             this.hTextBox1.UseAnimation = false;
             this.hTextBox1.UseSystemPasswordChar = false;
-            this.hTextBox1.WatermarkColor = System.Drawing.Color.Gray;
+            this.hTextBox1.WatermarkColor = System.Drawing.Color.DarkGray;
             this.hTextBox1.WatermarkFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hTextBox1.WatermarkRendering = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             this.hTextBox1.WatermarkText = "Enter watermark";
@@ -1723,7 +1827,7 @@ namespace HecopUI_Test
             this.hRichTextBox1.HideSelection = false;
             this.hRichTextBox1.Lines = new string[] {
         "hRichTextBox1"};
-            this.hRichTextBox1.Location = new System.Drawing.Point(96, 241);
+            this.hRichTextBox1.Location = new System.Drawing.Point(74, 157);
             this.hRichTextBox1.MaxLength = 2147483647;
             this.hRichTextBox1.MultiLine = true;
             this.hRichTextBox1.Name = "hRichTextBox1";
@@ -1735,9 +1839,10 @@ namespace HecopUI_Test
             this.hRichTextBox1.SelectionRightIndent = 0;
             this.hRichTextBox1.ShorcutEnabled = false;
             this.hRichTextBox1.ShowSelectionMargin = false;
-            this.hRichTextBox1.Size = new System.Drawing.Size(258, 44);
+            this.hRichTextBox1.Size = new System.Drawing.Size(250, 268);
             this.hRichTextBox1.TabIndex = 0;
             this.hRichTextBox1.Text = "hRichTextBox1";
+            this.hRichTextBox1.TextColor = System.Drawing.Color.Silver;
             this.hRichTextBox1.TextRenderHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             this.hRichTextBox1.WordWrap = true;
             // 
@@ -2896,6 +3001,7 @@ namespace HecopUI_Test
             // tabPage20
             // 
             this.tabPage20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.tabPage20.Controls.Add(this.hTextBox3);
             this.tabPage20.Controls.Add(this.hCircleAnglePicker1);
             this.tabPage20.Cursor = System.Windows.Forms.Cursors.Default;
             this.tabPage20.Location = new System.Drawing.Point(139, 4);
@@ -2905,63 +3011,211 @@ namespace HecopUI_Test
             this.tabPage20.TabIndex = 12;
             this.tabPage20.Text = "Pickers";
             // 
+            // hTextBox3
+            // 
+            this.hTextBox3.AcceptsReturn = true;
+            this.hTextBox3.AcceptsTab = true;
+            this.hTextBox3.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.hTextBox3.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.hTextBox3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(142)))));
+            this.hTextBox3.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(148)))), ((int)(((byte)(122)))));
+            this.hTextBox3.BorderHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(188)))), ((int)(((byte)(162)))));
+            this.hTextBox3.BorderThickness = 1;
+            this.hTextBox3.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.hTextBox3.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.hTextBox3.Image = null;
+            this.hTextBox3.ImageOffsetX = 2;
+            this.hTextBox3.ImageSize = new System.Drawing.Size(20, 20);
+            this.hTextBox3.Location = new System.Drawing.Point(17, 175);
+            this.hTextBox3.MaxLength = 32767;
+            this.hTextBox3.Multiline = false;
+            this.hTextBox3.Name = "hTextBox3";
+            this.hTextBox3.Radius = 0;
+            this.hTextBox3.ReadOnly = false;
+            this.hTextBox3.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.hTextBox3.ShortcutsEnabled = false;
+            this.hTextBox3.ShowBottomBorder = true;
+            this.hTextBox3.ShowTopBorder = true;
+            this.hTextBox3.Size = new System.Drawing.Size(80, 28);
+            this.hTextBox3.Style = HecopUI_Winforms.Controls.HTextBox.TextBoxStyle.Style2;
+            this.hTextBox3.TabIndex = 3;
+            this.hTextBox3.TexOffsetX = 2;
+            this.hTextBox3.Text = "0";
+            this.hTextBox3.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.hTextBox3.TextBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.hTextBox3.TextBoxHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.hTextBox3.TextColor = System.Drawing.Color.Silver;
+            this.hTextBox3.UseAnimation = false;
+            this.hTextBox3.UseSystemPasswordChar = false;
+            this.hTextBox3.WatermarkColor = System.Drawing.Color.DarkGray;
+            this.hTextBox3.WatermarkFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hTextBox3.WatermarkRendering = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.hTextBox3.WatermarkText = "";
+            // 
             // hCircleAnglePicker1
             // 
             this.hCircleAnglePicker1.AutoScroll = false;
             this.hCircleAnglePicker1.AutoScrollMargin = new System.Drawing.Size(0, 0);
             this.hCircleAnglePicker1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
             this.hCircleAnglePicker1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.hCircleAnglePicker1.CircleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.hCircleAnglePicker1.CircleColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(148)))), ((int)(((byte)(128)))));
+            this.hCircleAnglePicker1.CoreColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.hCircleAnglePicker1.CoreType = HecopUI_Winforms.Enums.CircleAnglePickerType.Ellipse;
+            this.hCircleAnglePicker1.CoreWidth = 20;
             this.hCircleAnglePicker1.InnerCircle = true;
-            this.hCircleAnglePicker1.InnerCircleStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
-            this.hCircleAnglePicker1.LineCap = System.Drawing.Drawing2D.LineCap.Square;
-            this.hCircleAnglePicker1.LineStyle = System.Drawing.Drawing2D.DashStyle.Dash;
-            this.hCircleAnglePicker1.Location = new System.Drawing.Point(194, 115);
+            this.hCircleAnglePicker1.InnerCircleColor = System.Drawing.Color.Gray;
+            this.hCircleAnglePicker1.LineCap = System.Drawing.Drawing2D.LineCap.DiamondAnchor;
+            this.hCircleAnglePicker1.LineColor = System.Drawing.Color.Gray;
+            this.hCircleAnglePicker1.LineCut = 12;
+            this.hCircleAnglePicker1.LineWidth = 2;
+            this.hCircleAnglePicker1.Location = new System.Drawing.Point(17, 25);
             this.hCircleAnglePicker1.Name = "hCircleAnglePicker1";
-            this.hCircleAnglePicker1.Shading = true;
-            this.hCircleAnglePicker1.Size = new System.Drawing.Size(300, 249);
-            this.hCircleAnglePicker1.TabIndex = 3;
+            this.hCircleAnglePicker1.Size = new System.Drawing.Size(127, 127);
+            this.hCircleAnglePicker1.TabIndex = 0;
             this.hCircleAnglePicker1.Text = "hCircleAnglePicker1";
+            this.hCircleAnglePicker1.ValueChanged += new System.EventHandler(this.hCircleAnglePicker1_ValueChanged);
             // 
-            // hTextBox2
+            // tabPage22
             // 
-            this.hTextBox2.AcceptsReturn = true;
-            this.hTextBox2.AcceptsTab = true;
-            this.hTextBox2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.hTextBox2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.hTextBox2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(142)))));
-            this.hTextBox2.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(148)))), ((int)(((byte)(122)))));
-            this.hTextBox2.BorderHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(188)))), ((int)(((byte)(162)))));
-            this.hTextBox2.BorderThickness = 1;
-            this.hTextBox2.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.hTextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.hTextBox2.Image = ((System.Drawing.Image)(resources.GetObject("hTextBox2.Image")));
-            this.hTextBox2.ImageOffsetX = 2;
-            this.hTextBox2.ImageSize = new System.Drawing.Size(20, 20);
-            this.hTextBox2.Location = new System.Drawing.Point(307, 53);
-            this.hTextBox2.MaxLength = 32767;
-            this.hTextBox2.Multiline = false;
-            this.hTextBox2.Name = "hTextBox2";
-            this.hTextBox2.Radius = 0;
-            this.hTextBox2.ReadOnly = false;
-            this.hTextBox2.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.hTextBox2.ShortcutsEnabled = false;
-            this.hTextBox2.ShowBottomBorder = true;
-            this.hTextBox2.ShowTopBorder = true;
-            this.hTextBox2.Size = new System.Drawing.Size(198, 38);
-            this.hTextBox2.Style = HecopUI_Winforms.Controls.HTextBox.TextBoxStyle.Style2;
-            this.hTextBox2.TabIndex = 2;
-            this.hTextBox2.TexOffsetX = 2;
-            this.hTextBox2.Text = "hTextBox2";
-            this.hTextBox2.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.hTextBox2.TextBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.hTextBox2.TextBoxHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.hTextBox2.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.hTextBox2.UseAnimation = false;
-            this.hTextBox2.UseSystemPasswordChar = false;
-            this.hTextBox2.WatermarkColor = System.Drawing.Color.Gray;
-            this.hTextBox2.WatermarkFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hTextBox2.WatermarkRendering = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            this.hTextBox2.WatermarkText = "Enter watermark";
+            this.tabPage22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.tabPage22.Controls.Add(this.hListView2);
+            this.tabPage22.Controls.Add(this.hListView1);
+            this.tabPage22.Cursor = System.Windows.Forms.Cursors.Default;
+            this.tabPage22.Location = new System.Drawing.Point(139, 4);
+            this.tabPage22.Name = "tabPage22";
+            this.tabPage22.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage22.Size = new System.Drawing.Size(757, 546);
+            this.tabPage22.TabIndex = 14;
+            this.tabPage22.Text = "List View";
+            // 
+            // hListView2
+            // 
+            this.hListView2.Alignment = System.Windows.Forms.ListViewAlignment.Left;
+            this.hListView2.AllowColumnReorder = true;
+            this.hListView2.AutoSizeTable = false;
+            this.hListView2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.hListView2.BorderBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(148)))), ((int)(((byte)(128)))));
+            this.hListView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.hListView2.CheckBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.hListView2.CheckBoxes = true;
+            this.hListView2.CheckMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(148)))), ((int)(((byte)(128)))));
+            this.hListView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader4,
+            this.columnHeader5,
+            this.columnHeader6});
+            this.hListView2.Depth = 0;
+            this.hListView2.DividerColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(142)))));
+            this.hListView2.FullRowSelect = true;
+            this.hListView2.HeaderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.hListView2.HeaderFont = new System.Drawing.Font("Segoe UI", 12F);
+            this.hListView2.HeaderTextColor = System.Drawing.Color.Silver;
+            this.hListView2.HideSelection = false;
+            this.hListView2.ItemColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.hListView2.ItemFont = new System.Drawing.Font("Segoe UI", 12F);
+            this.hListView2.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            listViewItem1.StateImageIndex = 0;
+            listViewItem2.StateImageIndex = 0;
+            this.hListView2.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem1,
+            listViewItem2});
+            this.hListView2.ItemSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(148)))), ((int)(((byte)(128)))));
+            this.hListView2.ItemTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(148)))), ((int)(((byte)(128)))));
+            this.hListView2.ItemTextHoverColor = System.Drawing.Color.WhiteSmoke;
+            this.hListView2.ItemTextSelectedColor = System.Drawing.Color.White;
+            this.hListView2.Location = new System.Drawing.Point(18, 204);
+            this.hListView2.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.hListView2.Name = "hListView2";
+            this.hListView2.OwnerDraw = true;
+            this.hListView2.Size = new System.Drawing.Size(720, 138);
+            this.hListView2.TabIndex = 1;
+            this.hListView2.UseCompatibleStateImageBehavior = false;
+            this.hListView2.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Column Header 1";
+            this.columnHeader4.Width = 222;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Column Header 2";
+            this.columnHeader5.Width = 231;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Column Header 3";
+            this.columnHeader6.Width = 264;
+            // 
+            // hListView1
+            // 
+            this.hListView1.Alignment = System.Windows.Forms.ListViewAlignment.Left;
+            this.hListView1.AllowColumnReorder = true;
+            this.hListView1.AutoSizeTable = false;
+            this.hListView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.hListView1.BorderBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(148)))), ((int)(((byte)(128)))));
+            this.hListView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.hListView1.CheckBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.hListView1.CheckBoxes = true;
+            this.hListView1.CheckMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(148)))), ((int)(((byte)(128)))));
+            this.hListView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3});
+            this.hListView1.Depth = 0;
+            this.hListView1.DividerColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(168)))), ((int)(((byte)(142)))));
+            this.hListView1.HeaderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.hListView1.HeaderFont = new System.Drawing.Font("Segoe UI", 12F);
+            this.hListView1.HeaderTextColor = System.Drawing.Color.Silver;
+            this.hListView1.HideSelection = false;
+            this.hListView1.ItemColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.hListView1.ItemFont = new System.Drawing.Font("Segoe UI", 12F);
+            this.hListView1.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            listViewItem3.StateImageIndex = 0;
+            listViewItem4.StateImageIndex = 0;
+            listViewItem5.StateImageIndex = 0;
+            this.hListView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem3,
+            listViewItem4,
+            listViewItem5});
+            this.hListView1.ItemSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(148)))), ((int)(((byte)(128)))));
+            this.hListView1.ItemTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(148)))), ((int)(((byte)(128)))));
+            this.hListView1.ItemTextHoverColor = System.Drawing.Color.WhiteSmoke;
+            this.hListView1.ItemTextSelectedColor = System.Drawing.Color.White;
+            this.hListView1.Location = new System.Drawing.Point(21, 51);
+            this.hListView1.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.hListView1.Name = "hListView1";
+            this.hListView1.OwnerDraw = true;
+            this.hListView1.Size = new System.Drawing.Size(720, 138);
+            this.hListView1.TabIndex = 0;
+            this.hListView1.UseCompatibleStateImageBehavior = false;
+            this.hListView1.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Column Header 1";
+            this.columnHeader1.Width = 222;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Column Header 2";
+            this.columnHeader2.Width = 231;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Column Header 3";
+            this.columnHeader3.Width = 264;
+            // 
+            // tabPage23
+            // 
+            this.tabPage23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.tabPage23.Cursor = System.Windows.Forms.Cursors.Default;
+            this.tabPage23.Location = new System.Drawing.Point(139, 4);
+            this.tabPage23.Name = "tabPage23";
+            this.tabPage23.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage23.Size = new System.Drawing.Size(757, 546);
+            this.tabPage23.TabIndex = 15;
+            this.tabPage23.Text = "Tree View";
             // 
             // Form1
             // 
@@ -3013,6 +3267,7 @@ namespace HecopUI_Test
             this.tabPage6.ResumeLayout(false);
             this.tabPage19.ResumeLayout(false);
             this.tabPage20.ResumeLayout(false);
+            this.tabPage22.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -3132,11 +3387,23 @@ namespace HecopUI_Test
         private HecopUI_Winforms.Controls.HClockDigital hClockDigital1;
         private HecopUI_Winforms.Controls.HClockCircular hClockCircular1;
         private TabPage tabPage20;
-        private HecopUI_Winforms.Controls.HCircleAnglePicker hCircleAnglePicker1;
         private TabPage tabPage21;
         private HecopUI_Winforms.Controls.HTextBox hTextBox1;
         private HecopUI_Winforms.Controls.HRichTextBox hRichTextBox1;
         private HecopUI_Winforms.Controls.HTextBox hTextBox2;
+        private HecopUI_Winforms.Controls.HRichTextBox hRichTextBox2;
+        private HecopUI_Winforms.Controls.HCircleAnglePicker hCircleAnglePicker1;
+        private HecopUI_Winforms.Controls.HTextBox hTextBox3;
+        private TabPage tabPage22;
+        private TabPage tabPage23;
+        private HecopUI_Winforms.Controls.HListView hListView1;
+        private ColumnHeader columnHeader1;
+        private ColumnHeader columnHeader2;
+        private ColumnHeader columnHeader3;
+        private HecopUI_Winforms.Controls.HListView hListView2;
+        private ColumnHeader columnHeader4;
+        private ColumnHeader columnHeader5;
+        private ColumnHeader columnHeader6;
     }
 }
 

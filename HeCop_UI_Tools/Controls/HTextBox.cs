@@ -319,7 +319,7 @@ namespace HecopUI_Winforms.Controls
 
             //Init();
 
-
+         
         }
 
         private AnimationManager _animationManager;
@@ -337,7 +337,7 @@ namespace HecopUI_Winforms.Controls
             Controls.Add(tbCtrl);
 
             SetPlaceholder(tbCtrl, WatermarkText, WatermarkFont);
-
+            UpdateTextBoxLocation();
             base.OnCreateControl();
         }
 

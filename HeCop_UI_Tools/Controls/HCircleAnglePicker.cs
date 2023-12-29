@@ -124,7 +124,24 @@ namespace HecopUI_Winforms.Controls
         public HCircleAnglePicker()
         {
             SetStyle(ControlStyles.SupportsTransparentBackColor | ControlStyles.OptimizedDoubleBuffer, true);
-            MouseWheel += CircleAnglePicker_MouseWheel;
+          
+        }
+
+        [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1600:ElementsMustBeDocumented", Justification = "Reviewed.")]
+        protected override void OnMouseWheel(MouseEventArgs e)
+        {
+            int value = Value;
+
+            if (e.Delta > 0)
+            {
+                value += 10;
+            }
+            else
+            {
+                value -= 10;
+            }
+            SetValue(value);
+            base.OnMouseWheel(e);
         }
 
         /// <summary>
@@ -740,7 +757,7 @@ namespace HecopUI_Winforms.Controls
         {
             if (keyData == Keys.Right || keyData == Keys.Left || keyData == Keys.Up || keyData == Keys.Down)
             {
-                CircleAnglePicker_KeyDown(this, new KeyEventArgs(keyData));
+                OnKeyDown(new KeyEventArgs(keyData));
                 return true;
             }
             else
@@ -749,8 +766,10 @@ namespace HecopUI_Winforms.Controls
             }
         }
 
+      
+
         [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1600:ElementsMustBeDocumented", Justification = "Reviewed.")]
-        private void CircleAnglePicker_KeyDown(object sender, KeyEventArgs e)
+        protected override void OnKeyDown(KeyEventArgs e)
         {
             int value = Value;
             int d = e.Control ? -1 : 1;
@@ -774,51 +793,39 @@ namespace HecopUI_Winforms.Controls
             }
 
             SetValue(value);
+            base.OnKeyDown(e);
         }
 
+      
         [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1600:ElementsMustBeDocumented", Justification = "Reviewed.")]
-        private void CircleAnglePicker_MouseClick(object sender, MouseEventArgs e)
+        protected override void OnMouseClick(MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
                 SetAngle(e.Location);
             }
+            base.OnMouseClick(e);
         }
 
         [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1600:ElementsMustBeDocumented", Justification = "Reviewed.")]
-        private void CircleAnglePicker_MouseMove(object sender, MouseEventArgs e)
+        protected override void OnMouseMove(MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
                 SetAngle(e.Location);
             }
+            base.OnMouseMove(e);
         }
 
         [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1600:ElementsMustBeDocumented", Justification = "Reviewed.")]
-        private void CircleAnglePicker_MouseWheel(object sender, MouseEventArgs e)
-        {
-            int value = Value;
-
-            if (e.Delta > 0)
-            {
-                value += 10;
-            }
-            else
-            {
-                value -= 10;
-            }
-
-            SetValue(value);
-        }
-
-        [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1600:ElementsMustBeDocumented", Justification = "Reviewed.")]
-        private void CircleAnglePicker_PaddingChanged(object sender, EventArgs e)
+        protected override void OnPaddingChanged(EventArgs e)
         {
             Refresh();
+            base.OnPaddingChanged(e);
         }
 
         [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1600:ElementsMustBeDocumented", Justification = "Reviewed.")]
-        private void CircleAnglePicker_Paint(object sender, PaintEventArgs e)
+        protected override void OnPaint(PaintEventArgs e)
         {
             var g = e.Graphics;
 
@@ -837,12 +844,16 @@ namespace HecopUI_Winforms.Controls
             DrawCircle(g, crect);
             DrawLine(g, crect);
             DrawPoint(g, crect);
+            base.OnPaint(e);
         }
 
         [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1600:ElementsMustBeDocumented", Justification = "Reviewed.")]
-        private void CircleAnglePicker_Resize(object sender, EventArgs e)
+        protected override void OnResize(EventArgs e)
         {
+            int _maxSize = Math.Max(Width, Height);
+            Size = new Size(_maxSize, _maxSize);
             Refresh();
+            base.OnResize(e);
         }
 
         /// <summary>

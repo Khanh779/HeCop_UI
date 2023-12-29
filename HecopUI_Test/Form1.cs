@@ -151,5 +151,10 @@ namespace HecopUI_Test
             #endregion
 
         }
+
+        private void hCircleAnglePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            hTextBox3.Text = hCircleAnglePicker1.Value.ToString();
+        }
     }
 }

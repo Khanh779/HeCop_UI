@@ -132,6 +132,16 @@ namespace HecopUI_Winforms.Controls
             };
         }
 
+        public Color TextColor
+        {
+            get { return richTextBox.ForeColor; }
+            set
+            {
+                richTextBox.ForeColor = value;
+                Invalidate();
+            }
+        }
+
         protected override void OnMouseClick(MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)

@@ -140,27 +140,8 @@ namespace HecopUI_Winforms.Controls
 
         protected override void OnDrawSubItem(DrawListViewSubItemEventArgs e)
         {
-            //e.DrawBackground();
-
-            base.OnDrawSubItem(e);
-
-
-        }
-
-
-        public Color ItemTextSelectedColor { get; set; } = Color.White;
-        public Color ItemTextHoverColor { get; set; } = Color.WhiteSmoke;
-        public Color CheckBoxColor { get; set; } = Color.WhiteSmoke;
-        public Color BorderBoxColor { get; set; } = Color.DodgerBlue;
-        public Color CheckMarkColor { get; set; } = Color.DodgerBlue;
-
-
-
-        protected override void OnDrawItem(DrawListViewItemEventArgs e)
-        {
-            e.DrawBackground();
-            //e.DrawDefault = false;
             var g = e.Graphics; //GetAppResources.GetControlGraphicsEffect(g);
+            g.FillRectangle(new SolidBrush(BackColor), ClientRectangle);
             g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             int left = 0;
             if (InvokeRequired == false)
@@ -168,30 +149,28 @@ namespace HecopUI_Winforms.Controls
                 switch (View)
                 {
                     case View.Details:
-
-                        g.FillRectangle(new SolidBrush((e.Item.Selected) ? itemSelectedColor :
-                    (e.Bounds.Contains(MouseLocation) && HMouseState == MouseState.HOVER) ? itemHoverColor : itemColor), e.Item.Bounds.X,
-                    e.Bounds.Y, e.Bounds.Width, e.Bounds.Height);
-                        // Draw separator line
-                        g.DrawLine(new System.Drawing.Pen(new SolidBrush(dividerColor), 1), e.Bounds.Left, e.Bounds.Y, e.Bounds.Right, e.Bounds.Y);
                         StringFormat SF = new StringFormat() { LineAlignment = StringAlignment.Center, Alignment = StringAlignment.Near, Trimming = StringTrimming.EllipsisCharacter };
+                      
 
-                        if (CheckBoxes == true)
+                        for (int i = 0; i < e.Item.SubItems.Count;i++)
                         {
-
-                            RectangleF recBox = new RectangleF(LocationXColumnDisplayIndex(Columns[0].DisplayIndex) + 4, e.Bounds.Y + e.Item.Bounds.Height / 2 - 6, 14, 14);
-                            left += (int)recBox.Width + 6;
-                            g.FillRectangle(new SolidBrush(CheckBoxColor), recBox);
-                            if (e.Item.Checked)
-                                g.DrawImage(CheckMarkBitmap(), new RectangleF(recBox.X - 1, recBox.Y - 1, recBox.Width, recBox.Height));
-
-                            g.DrawRectangle(new Pen(new SolidBrush(Color.Red)), Rectangle.Round(recBox));
-
-                        }
-                        for (int i = 0; i < e.Item.SubItems.Count; i++)
-                        {
-
                             var subItem = e.Item.SubItems[i];
+                            g.FillRectangle(new SolidBrush((e.Item.Selected) ? itemSelectedColor :
+                            (e.Bounds.Contains(MouseLocation) && HMouseState == MouseState.HOVER) ? itemHoverColor : itemColor), subItem.Bounds.X,
+                            subItem.Bounds.Y, subItem.Bounds.Width, subItem.Bounds.Height);
+                            if (GridLines == true) g.DrawLine(new System.Drawing.Pen(new SolidBrush(dividerColor), 1), e.Bounds.Left, e.Bounds.Y, e.Bounds.Right, e.Bounds.Y);
+                            if (CheckBoxes == true)
+                            {
+
+                                RectangleF recBox = new RectangleF(LocationXColumnDisplayIndex(Columns[0].DisplayIndex) + 4, subItem.Bounds.Y + subItem.Bounds.Height / 2 - 6, 14, 14);
+                                left += (int)recBox.Width + 6;
+                                g.FillRectangle(new SolidBrush(CheckBoxColor), recBox);
+                                if (e.Item.Checked)
+                                    g.DrawImage(CheckMarkBitmap(), new RectangleF(recBox.X - 1, recBox.Y - 1, recBox.Width, recBox.Height));
+
+                                g.DrawRectangle(new Pen(new SolidBrush(BorderBoxColor)), Rectangle.Round(recBox));
+
+                            }
                             if (i == 0)
                             {
                                 if (Columns[0].Width > 0)
@@ -206,6 +185,8 @@ namespace HecopUI_Winforms.Controls
                                                        new RectangleF((subItem.Bounds.X), subItem.Bounds.Y + 4, subItem.Bounds.Width, subItem.Bounds.Height - 8), SF);
                             }
                         }
+
+                      
                         break;
                     case View.Tile:
                         break;
@@ -213,9 +194,65 @@ namespace HecopUI_Winforms.Controls
 
             }
 
-            base.OnDrawItem(e);
-
+            base.OnDrawSubItem(e);
         }
+
+        public Color ItemTextSelectedColor { get; set; } = Color.White;
+        public Color ItemTextHoverColor { get; set; } = Color.WhiteSmoke;
+        public Color CheckBoxColor { get; set; } = Color.WhiteSmoke;
+        public Color BorderBoxColor { get; set; } = Color.DodgerBlue;
+        public Color CheckMarkColor { get; set; } = Color.DodgerBlue;
+
+   
+        //protected override void OnDrawItem(DrawListViewItemEventArgs e)
+        //{
+        //    base.OnDrawItem(e);
+        //    e.DrawBackground();
+        //    //e.DrawDefault = false;
+        //    var g = e.Graphics; //GetAppResources.GetControlGraphicsEffect(g);
+        //    g.FillRectangle(new SolidBrush(BackColor), ClientRectangle);
+        //    g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+        //    int left = 0;
+        //    if (InvokeRequired == false)
+        //    {
+      
+        //        switch (View)
+        //        {
+        //            case View.Details:
+
+        //                g.FillRectangle(new SolidBrush((e.Item.Selected) ? itemSelectedColor :
+        //                (e.Bounds.Contains(MouseLocation) && HMouseState == MouseState.HOVER) ? itemHoverColor : itemColor), LocationXColumnDisplayIndex(Columns[0].DisplayIndex),
+        //                e.Item.Bounds.Y, e.Item.Bounds.Width, e.Item.Bounds.Height);
+        //                if (GridLines == true)
+        //                // Draw separator line
+        //                g.DrawLine(new System.Drawing.Pen(new SolidBrush(dividerColor), 1), e.Item.Bounds.Left, e.Item.Bounds.Y, e.Item.Bounds.Right, e.Item.Bounds.Y);
+        //                StringFormat SF = new StringFormat() { LineAlignment = StringAlignment.Center, Alignment = StringAlignment.Near, Trimming = StringTrimming.EllipsisCharacter };
+
+        //                if (CheckBoxes == true)
+        //                {
+
+        //                    RectangleF recBox = new RectangleF(LocationXColumnDisplayIndex(Columns[0].DisplayIndex) + 4, e.Item.Bounds.Y + e.Item.Bounds.Height / 2 - 6, 14, 14);
+        //                    left += (int)recBox.Width + 6;
+        //                    g.FillRectangle(new SolidBrush(CheckBoxColor), recBox);
+        //                    if (e.Item.Checked)
+        //                        g.DrawImage(CheckMarkBitmap(), new RectangleF(recBox.X - 1, recBox.Y - 1, recBox.Width, recBox.Height));
+
+        //                    g.DrawRectangle(new Pen(new SolidBrush(BorderBoxColor)), Rectangle.Round(recBox));
+
+        //                }
+        //                var subItem = e.Item;
+        //                g.DrawString(subItem.Text, itemFont, new SolidBrush(e.Item.Selected ? ItemTextSelectedColor :
+        //                    (e.Bounds.Contains(MouseLocation) && HMouseState == MouseState.HOVER) ? ItemTextHoverColor : ItemTextColor),
+        //                    new RectangleF( LocationXColumnDisplayIndex(Columns[0].DisplayIndex) + left, e.Item.Bounds.Y + 4,  Columns[0].Width -  left - e.Item.Bounds.Width, e.Item.Bounds.Height));
+
+        //                break;
+        //            case View.Tile:
+        //                break;
+        //        }
+
+        //    }
+
+        //}
 
         static Point[] CHECKMARK_LINE = { new Point(3, 8), new Point(7, 12), new Point(14, 5) };
 
@@ -225,7 +262,7 @@ namespace HecopUI_Winforms.Controls
             checkMark.MakeTransparent();
             var g = Graphics.FromImage(checkMark);
             g.SmoothingMode = SmoothingMode.HighQuality;
-            var pen = new Pen(new SolidBrush(Color.DodgerBlue), 2);
+            var pen = new Pen(new SolidBrush(CheckMarkColor), 2);
             g.DrawLines(pen, CHECKMARK_LINE);
 
             return checkMark;
@@ -255,7 +292,7 @@ namespace HecopUI_Winforms.Controls
 
         protected override void OnDrawColumnHeader(DrawListViewColumnHeaderEventArgs e)
         {
-            base.OnDrawColumnHeader(e);
+          
             e.DrawDefault = false;
             Graphics g = e.Graphics;
             GetAppResources.GetControlGraphicsEffect(g);
@@ -266,6 +303,7 @@ namespace HecopUI_Winforms.Controls
             // Draw Text
             g.DrawString(e.Header.Text, headerFont, new SolidBrush(HeaderTextColor), new RectangleF(e.Bounds.X + 2, e.Bounds.Y,
                 e.Bounds.Width - 4, e.Bounds.Height), new StringFormat() { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center, Trimming = StringTrimming.EllipsisCharacter });
+            base.OnDrawColumnHeader(e);
         }
 
         private Color headerColor = Color.WhiteSmoke;
